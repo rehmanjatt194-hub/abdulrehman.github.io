@@ -1,0 +1,98 @@
+<div class="section-background color-{{ section.settings.color_scheme }}"></div>
+<div class="section section--{{ section.settings.section_width }} color-{{ section.settings.color_scheme }}">
+  <div class="footer-content spacing-style" style="{% render 'spacing-style', settings: section.settings %} display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; align-items: start; padding-top: 40px; padding-bottom: 40px;">
+
+    <div class="footer-col">
+      <h3 style="font-size: 18px; font-weight: bold; margin-bottom: 15px; color: inherit; letter-spacing: 0.5px;">About Mishi Collections</h3>
+      <p style="font-size: 14px; opacity: 0.8; margin-bottom: 10px; line-height: 1.6;">Elevating your everyday style with premium Zircon jewelry and signature French fragrances.</p>
+      <p style="font-size: 14px; opacity: 0.8; margin-bottom: 10px; font-weight: bold;"> Cash on Delivery across Pakistan!</p>
+      <p style="font-size: 14px; opacity: 0.8; line-height: 1.6;">✉️ mishi.collections01@gmail.com</p>
+    </div>
+
+    <div class="footer-col">
+      <h3 style="font-size: 18px; font-weight: bold; margin-bottom: 15px; color: inherit; letter-spacing: 0.5px;">Quick Links</h3>
+      <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; opacity: 0.8; line-height: 2.2;">
+        <li><a href="/collections/all" style="color: inherit; text-decoration: none;">Shop All</a></li>
+        <li><a href="/collections/premium-zircon-jewelry-the-complete-luxury-collection" style="color: inherit; text-decoration: none;">Premium Jewelry</a></li>
+        <li><a href="/collections/signature-fragrances-premium-long-lasting-perfumes" style="color: inherit; text-decoration: none;">Signature Perfumes</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3 style="font-size: 18px; font-weight: bold; margin-bottom: 15px; color: inherit; letter-spacing: 0.5px;">Customer Care</h3>
+      <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; opacity: 0.8; line-height: 2.2;">
+        <li><a href="/pages/contact" style="color: inherit; text-decoration: none;">Contact Us</a></li>
+        <li><a href="/policies/shipping-policy" style="color: inherit; text-decoration: none;">Shipping & Delivery</a></li>
+        <li><a href="/pages/refund-return-policy" style="color: inherit; text-decoration: none;">Refund & Exchange</a></li>
+        <li><a href="/pages/frequently-asked-questions-faqs" style="color: inherit; text-decoration: none;">FAQs</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      {% content_for 'blocks' %}
+    </div>
+
+  </div>
+</div>
+
+{% stylesheet %}
+  .footer-content {
+    contain: content;
+    content-visibility: auto;
+  }
+  .footer-col a:hover {
+    text-decoration: underline !important;
+    opacity: 1 !important;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.footer",
+  "class": "section-wrapper",
+  "blocks": [
+    {
+      "type": "group"
+    },
+    {
+      "type": "text"
+    },
+    {
+      "type": "email-signup"
+    }
+  ],
+  "enabled_on": {
+    "groups": ["footer"]
+  },
+  "settings": [
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "t:settings.width",
+      "options": [
+        {
+          "value": "page-width",
+          "label": "t:options.page"
+        },
+        {
+          "value": "full-width",
+          "label": "t:options.full"
+        }
+      ],
+      "default": "page-width"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.footer",
+      "category": "t:categories.footer"
+    }
+  ]
+}
+{% endschema %}
