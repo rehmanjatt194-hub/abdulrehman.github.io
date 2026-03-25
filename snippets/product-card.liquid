@@ -81,6 +81,16 @@
       {{ product.title }}
     </span>
   </a>
+  <div
+    class="
+      product-card__content
+      layout-panel-flex
+      layout-panel-flex--column
+      product-grid__card
+      spacing-style
+      border-style
+      gap-style
+      {% if block_settings.inherit_color_scheme == false %} color-{{ block_settings.color_scheme }}{% endif %}
     "
     style="
       {% render 'border-override', settings: block_settings %}
