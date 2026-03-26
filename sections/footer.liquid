@@ -1,85 +1,355 @@
-<div class="section-background color-{{ section.settings.color_scheme }}"></div>
-<div class="section section--{{ section.settings.section_width }} color-{{ section.settings.color_scheme }}">
-  <div class="footer-content spacing-style" style="{% render 'spacing-style', settings: section.settings %} display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; align-items: start; padding-top: 40px; padding-bottom: 40px;">
+{%- style -%}
+  .footer {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    background-color: {{ section.settings.bg_color }};
+    color: {{ section.settings.text_color }};
+    font-family: var(--font-body-family);
+    line-height: 1.5;
+  }
 
-    <div class="footer-col" style="color: {{ section.settings.text_color }};">
-      <h3 style="font-size: 18px; font-weight: bold; margin-bottom: 15px; color: inherit; letter-spacing: 0.5px;">About Mishi Collections</h3>
-      <p style="font-size: 14px; opacity: 0.8; margin-bottom: 10px; line-height: 1.6;">Elevating your everyday style with premium Zircon jewelry and signature French fragrances.</p>
-      <p style="font-size: 14px; opacity: 0.8; margin-bottom: 10px; font-weight: bold;"> Cash on Delivery across Pakistan!</p>
-      <p style="font-size: 14px; opacity: 0.8; line-height: 1.6;">✉️ mishi.collections01@gmail.com</p>
+  .footer__top {
+    display: grid;
+    grid-template-columns: 1.5fr repeat(3, 1fr) 1.5fr;
+    gap: 4rem;
+    padding-bottom: 6rem;
+    border-bottom: 1px solid rgba(var(--color-foreground), 0.1);
+  }
+
+  @media screen and (max-width: 1100px) {
+    .footer__top {
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem 2rem;
+    }
+  }
+
+  @media screen and (max-width: 750px) {
+    .footer__top {
+      grid-template-columns: 1fr;
+      gap: 4rem;
+    }
+  }
+
+  .footer__logo img {
+    height: auto;
+    max-width: 160px;
+    display: block;
+  }
+
+  .footer__heading {
+    font-family: var(--font-heading-family);
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 2.5rem;
+    color: inherit;
+    letter-spacing: 0.02em;
+  }
+
+  .footer__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer__list-item {
+    margin-bottom: 1.2rem;
+  }
+
+  .footer__link {
+    color: inherit;
+    text-decoration: none;
+    font-size: 1.5rem;
+    opacity: 0.75;
+    transition: all 0.3s ease;
+  }
+
+  .footer__link:hover {
+    opacity: 1;
+    padding-left: 5px;
+  }
+
+  .footer__text {
+    font-size: 1.4rem;
+    opacity: 0.8;
+    line-height: 1.6;
+  }
+
+  .footer__social {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer__social-icons {
+    display: flex;
+    gap: 1.6rem;
+    margin-top: 0.5rem;
+  }
+
+  .footer__social-link {
+    color: inherit;
+    width: 20px;
+    height: 20px;
+    opacity: 0.85;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .footer__social-link:hover {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+
+  .footer__social-link svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+  }
+
+  .footer__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: 5rem;
+  }
+
+  @media screen and (max-width: 990px) {
+    .footer__bottom {
+      flex-direction: column;
+      align-items: center;
+      gap: 4rem;
+      text-align: center;
+    }
+  }
+
+  .footer__legal {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .footer__policy-links {
+    display: flex;
+    gap: 2.5rem;
+  }
+
+  @media screen and (max-width: 750px) {
+     .footer__policy-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+     }
+  }
+
+  .footer__copyright {
+    font-size: 1.3rem;
+    opacity: 0.5;
+    margin-top: 0.5rem;
+  }
+
+  .footer__newsletter {
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .footer__newsletter-form {
+    display: flex;
+    gap: 0;
+    width: 100%;
+    position: relative;
+  }
+
+  .footer__input {
+    flex: 1;
+    background: #fff;
+    border: 1px solid rgba(var(--color-foreground), 0.15);
+    border-radius: 100px;
+    padding: 1.6rem 3rem;
+    padding-right: 14rem;
+    color: #000;
+    font-size: 1.5rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+
+  .footer__input:focus {
+    border-color: rgb(var(--color-foreground));
+  }
+
+  .footer__submit {
+    position: absolute;
+    right: 0.6rem;
+    top: 0.6rem;
+    bottom: 0.6rem;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 100px;
+    padding: 0 4rem;
+    font-weight: 600;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .footer__submit:hover {
+    background: #333;
+  }
+  
+  .footer__message {
+    margin-top: 1rem;
+    font-size: 1.3rem;
+  }
+{%- endstyle -%}
+
+<footer class="footer color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width">
+    
+    <div class="footer__top" data-animate>
+      
+      {%- comment -%} LOGO COLUMN {%- endcomment -%}
+      <div class="footer__logo-col stagger-item">
+        <div class="footer__logo">
+          {%- if section.settings.logo != blank -%}
+            {{ section.settings.logo | image_url: width: 400 | image_tag: loading: 'lazy' }}
+          {%- elsif settings.logo != blank -%}
+             {{ settings.logo | image_url: width: 400 | image_tag: loading: 'lazy' }}
+          {%- else -%}
+            <span class="h2" style="font-family: var(--font-heading-family);">{{ shop.name }}</span>
+          {%- endif -%}
+        </div>
+      </div>
+
+      {%- comment -%} BLOCKS (Menus, Text) {%- endcomment -%}
+      {%- for block in section.blocks -%}
+        <div class="footer__col stagger-item" {{ block.shopify_attributes }}>
+          {%- if block.settings.heading != blank -%}
+            <h3 class="footer__heading">{{ block.settings.heading | escape }}</h3>
+          {%- endif -%}
+          
+          {%- case block.type -%}
+            {%- when 'link_list' -%}
+              {%- if block.settings.menu != blank -%}
+                <ul class="footer__list">
+                  {%- for link in block.settings.menu.links -%}
+                    <li class="footer__list-item">
+                      <a href="{{ link.url }}" class="footer__link">{{ link.title }}</a>
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              {%- endif -%}
+            
+            {%- when 'text' -%}
+              <div class="footer__text">
+                {{ block.settings.content }}
+              </div>
+          {%- endcase -%}
+        </div>
+      {%- endfor -%}
+
+      {%- comment -%} SOCIAL COLUMN {%- endcomment -%}
+      <div class="footer__social stagger-item">
+         <h3 class="footer__heading">{{ section.settings.social_heading | escape }}</h3>
+         <div class="footer__social-icons">
+            {%- if settings.social_instagram_link != blank -%}
+              <a href="{{ settings.social_instagram_link }}" class="footer__social-link" aria-label="Instagram">{% render 'icon', icon: 'instagram' %}</a>
+            {%- endif -%}
+            {%- if settings.social_facebook_link != blank -%}
+              <a href="{{ settings.social_facebook_link }}" class="footer__social-link" aria-label="Facebook">{% render 'icon', icon: 'facebook' %}</a>
+            {%- endif -%}
+            {%- if settings.social_youtube_link != blank -%}
+              <a href="{{ settings.social_youtube_link }}" class="footer__social-link" aria-label="YouTube">{% render 'icon', icon: 'youtube' %}</a>
+            {%- endif -%}
+            {%- if settings.social_pinterest_link != blank -%}
+              <a href="{{ settings.social_pinterest_link }}" class="footer__social-link" aria-label="Pinterest">{% render 'icon', icon: 'pinterest' %}</a>
+            {%- endif -%}
+            {%- if settings.social_twitter_link != blank or settings.social_x_link != blank -%}
+               <a href="{{ settings.social_twitter_link | default: settings.social_x_link }}" class="footer__social-link" aria-label="X">{% render 'icon', icon: 'x' %}</a>
+            {%- endif -%}
+         </div>
+      </div>
+
     </div>
 
-    <div class="footer-col" style="color: {{ section.settings.text_color }};">
-      <h3 style="font-size: 18px; font-weight: bold; margin-bottom: 15px; color: inherit; letter-spacing: 0.5px;">Quick Links</h3>
-      <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; opacity: 0.8; line-height: 2.2;">
-        <li><a href="/collections/all" style="color: inherit; text-decoration: none;">Shop All</a></li>
-        <li><a href="/collections/premium-zircon-jewelry-the-complete-luxury-collection" style="color: inherit; text-decoration: none;">Premium Jewelry</a></li>
-        <li><a href="/collections/signature-fragrances-premium-long-lasting-perfumes" style="color: inherit; text-decoration: none;">Signature Perfumes</a></li>
-      </ul>
-    </div>
+    <div class="footer__bottom" data-animate="fade">
+      
+      <div class="footer__legal">
+        <div class="footer__policy-links">
+           {%- if section.settings.bottom_menu != blank -%}
+             {%- for link in section.settings.bottom_menu.links -%}
+               <a href="{{ link.url }}" class="footer__link" style="font-size: 1.3rem;">{{ link.title }}</a>
+             {%- endfor -%}
+           {%- else -%}
+             <a href="/policies/privacy-policy" class="footer__link" style="font-size: 1.3rem;">Privacy Policy</a>
+             <a href="/policies/terms-of-service" class="footer__link" style="font-size: 1.3rem;">Terms of Service</a>
+           {%- endif -%}
+        </div>
+        <div class="footer__copyright">
+          &copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: routes.root_url }}
+        </div>
+      </div>
 
-    <div class="footer-col" style="color: {{ section.settings.text_color }};">
-      <h3 style="font-size: 18px; font-weight: bold; margin-bottom: 15px; color: inherit; letter-spacing: 0.5px;">Customer Care</h3>
-      <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; opacity: 0.8; line-height: 2.2;">
-        <li><a href="/pages/contact" style="color: inherit; text-decoration: none;">Contact Us</a></li>
-        <li><a href="/policies/shipping-policy" style="color: inherit; text-decoration: none;">Shipping & Delivery</a></li>
-        <li><a href="/pages/refund-return-policy" style="color: inherit; text-decoration: none;">Refund & Exchange</a></li>
-        <li><a href="/pages/frequently-asked-questions-faqs" style="color: inherit; text-decoration: none;">FAQs</a></li>
-      </ul>
-    </div>
+      <div class="footer__newsletter">
+        {%- form 'customer', class: 'footer__newsletter-form' -%}
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <input
+            id="NewsletterForm--{{ section.id }}"
+            type="email"
+            name="contact[email]"
+            class="footer__input"
+            value="{{ form.email }}"
+            aria-required="true"
+            autocorrect="off"
+            autocapitalize="off"
+            autocomplete="email"
+            placeholder="Email"
+            required
+          >
+          <button type="submit" class="footer__submit" name="commit" id="Subscribe">
+            Join
+          </button>
+          
+          {%- if form.errors -%}
+            <div class="footer__message color-error" id="Newsletter-error--{{ section.id }}">
+              {{ form.errors.translated_fields.email | capitalize }} {{ form.errors.messages.email }}
+            </div>
+          {%- endif -%}
 
-    <div class="footer-col">
-      {% content_for 'blocks' %}
+          {%- if form.posted_successfully? -%}
+            <div class="footer__message color-success" id="Newsletter-success--{{ section.id }}" tabindex="-1" autofocus>
+              Success! Thank you for joining.
+            </div>
+          {%- endif -%}
+        {%- endform -%}
+      </div>
+
     </div>
 
   </div>
-</div>
-
-{% stylesheet %}
-  .footer-content {
-    contain: content;
-    content-visibility: auto;
-  }
-  .footer-col a:hover {
-    text-decoration: underline !important;
-    opacity: 1 !important;
-  }
-{% endstylesheet %}
+</footer>
 
 {% schema %}
 {
   "name": "t:names.footer",
-  "class": "section-wrapper",
-  "blocks": [
-    {
-      "type": "group"
-    },
-    {
-      "type": "text"
-    },
-    {
-      "type": "email-signup"
-    }
-  ],
-  "enabled_on": {
-    "groups": ["footer"]
-  },
+  "tag": "section",
+  "class": "section",
   "settings": [
     {
-      "type": "select",
-      "id": "section_width",
-      "label": "t:settings.width",
-      "options": [
-        {
-          "value": "page-width",
-          "label": "t:options.page"
-        },
-        {
-          "value": "full-width",
-          "label": "t:options.full"
-        }
-      ],
-      "default": "page-width"
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Footer Logo"
+    },
+    {
+      "type": "text",
+      "id": "social_heading",
+      "label": "Social Heading",
+      "default": "Let's be social"
+    },
+    {
+      "type": "link_list",
+      "id": "bottom_menu",
+      "label": "Bottom Menu (Privacy, Terms)"
     },
     {
       "type": "color_scheme",
@@ -89,16 +359,88 @@
     },
     {
       "type": "color",
+      "id": "bg_color",
+      "label": "Custom Background Color",
+      "default": "#fdfaf7"
+    },
+    {
+      "type": "color",
       "id": "text_color",
-      "label": "Text Color",
+      "label": "Custom Text Color",
       "default": "#121212"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "t:settings.top",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "t:settings.bottom",
+      "default": 100
+    }
+  ],
+  "blocks": [
+    {
+      "type": "link_list",
+      "name": "Menu Column",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Featured Links"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Menu"
+        }
+      ]
+    },
+    {
+       "type": "text",
+       "name": "Text Column",
+       "settings": [
+         {
+           "type": "text",
+           "id": "heading",
+           "label": "Heading",
+           "default": "About Us"
+         },
+         {
+           "type": "richtext",
+           "id": "content",
+           "label": "Content",
+           "default": "<p>Share information about your brand with your customers.</p>"
+         }
+       ]
     }
   ],
   "presets": [
     {
       "name": "t:names.footer",
-      "category": "t:categories.footer"
+      "blocks": [
+        { "type": "text", "settings": { "heading": "About Mishi Collections" } },
+        { "type": "link_list", "settings": { "heading": "Quick Links" } },
+        { "type": "link_list", "settings": { "heading": "Customer Care" } }
+      ]
     }
   ]
 }
-{% endschema %}
+{% endschema %}
