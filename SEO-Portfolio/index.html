@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdul Rehman | SEO Expert Portfolio</title>
+    <meta name="description" content="Professional SEO Expert Abdul Rehman - Delivering high-impact search engine optimization results.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --emerald-primary: #10b981;
+            --blue-secondary: #3b82f6;
+            --dark-bg: #050505;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --border-light: rgba(255, 255, 255, 0.08);
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--dark-bg);
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3%3Ffilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 150px 150px;
+            background-blend-mode: overlay;
+        }
+
+        .glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-light);
+        }
+
+        .glow {
+            box-shadow: 0 0 40px rgba(16, 185, 129, 0.12);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, var(--emerald-primary) 0%, var(--blue-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .search-bar-mock {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-light);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body class="text-gray-200 antialiased overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 top-0 glass px-6 py-5">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="text-3xl font-bold tracking-tighter">
+                AR<span class="text-gradient">.SEO</span>
+            </div>
+            <div class="hidden md:flex items-center space-x-10 font-medium text-sm uppercase tracking-widest">
+                <a href="#hero" class="hover:text-emerald-400 transition-colors">Home</a>
+                <a href="#results" class="hover:text-emerald-400 transition-colors">Results</a>
+                <a href="#services" class="hover:text-emerald-400 transition-colors">Process</a>
+                <a href="#contact" class="px-6 py-2.5 bg-white text-black hover:bg-emerald-500 hover:text-white rounded-full transition-all duration-300 font-bold">Audit Now</a>
+            </div>
+            <button class="md:hidden text-gray-400">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-screen flex items-center pt-24 px-6 overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute top-0 left-1/4 -z-10 w-96 h-96 bg-emerald-500/10 rounded-full blur-[120px] animate-pulse"></div>
+        <div class="absolute bottom-0 right-1/4 -z-10 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px] animate-pulse" style="animation-delay: 2s"></div>
+        
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+            <div class="space-y-10">
+                <div class="flex items-center gap-3">
+                    <div class="h-[1px] w-12 bg-emerald-500/50"></div>
+                    <span class="text-emerald-400 font-semibold text-sm uppercase tracking-[0.2em]">High Performance SEO</span>
+                </div>
+
+                <div class="space-y-4">
+                    <h1 class="text-7xl md:text-9xl font-bold leading-[0.9] tracking-tighter">
+                        Abdul <br>
+                        <span class="text-gradient">Rehman</span>
+                    </h1>
+                    <p class="text-2xl font-light text-gray-400 max-w-lg">
+                        Strategic Search Optimization for <span class="text-white font-medium">Global Brands</span>.
+                    </p>
+                </div>
+
+                <!-- Premium Search Bar Mockup -->
+                <div class="search-bar-mock p-2 rounded-2xl flex items-center gap-4 max-w-xl group focus-within:border-emerald-500/50 transition-all duration-300">
+                    <div class="pl-4 text-emerald-400">
+                        <i data-lucide="search" class="w-5 h-5"></i>
+                    </div>
+                    <input type="text" placeholder="yourwebsite.com" class="bg-transparent border-none outline-none text-white flex-grow py-3 text-lg placeholder:text-gray-600">
+                    <button class="bg-emerald-600 hover:bg-emerald-500 px-6 py-3 rounded-xl text-white font-bold transition-all duration-300 shadow-lg shadow-emerald-500/20">
+                        Audit Site
+                    </button>
+                </div>
+
+                <div class="flex items-center gap-8 pt-4">
+                    <div class="flex -space-x-3">
+                        <div class="w-10 h-10 rounded-full border-2 border-[#050505] bg-emerald-900 flex items-center justify-center text-[10px] font-bold">AR</div>
+                        <div class="w-10 h-10 rounded-full border-2 border-[#050505] bg-blue-900 flex items-center justify-center text-[10px] font-bold">SEO</div>
+                        <div class="w-10 h-10 rounded-full border-2 border-[#050505] bg-gray-800 flex items-center justify-center text-[10px] font-bold">+50</div>
+                    </div>
+                    <p class="text-sm text-gray-500 font-medium">Trusted by <span class="text-white">50+ Companies</span> worldwide</p>
+                </div>
+            </div>
+
+            <div class="relative">
+                <div class="relative z-10 animate-float">
+                    <img src="./abdul_rehman_profile.png" alt="Abdul Rehman" class="rounded-[2rem] w-full border border-white/10 shadow-2xl grayscale hover:grayscale-0 transition duration-1000">
+                    
+                    <!-- Floating Stat 1 -->
+                    <div class="absolute -top-8 -right-8 glass p-6 rounded-2xl glow animate-float" style="animation-delay: 1s">
+                        <div class="text-emerald-400 font-bold text-3xl">#1</div>
+                        <p class="text-xs text-gray-400 uppercase tracking-widest">Global Ranking</p>
+                    </div>
+
+                    <!-- Floating Stat 2 -->
+                    <div class="absolute -bottom-8 -left-8 glass p-6 rounded-2xl glow animate-float" style="animation-delay: 2s">
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
+                            <span class="text-2xl font-bold text-white">Live</span>
+                        </div>
+                        <p class="text-xs text-gray-400 uppercase tracking-widest mt-1">Real-time Optimization</p>
+                    </div>
+                </div>
+
+                <!-- Background Glow -->
+                <div class="absolute inset-0 bg-emerald-500/20 blur-[120px] rounded-full scale-110 -z-0"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Results Grid -->
+    <section id="results" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto space-y-20">
+            <div class="text-center space-y-6">
+                <h2 class="text-5xl md:text-7xl font-bold tracking-tighter">Results driven by <br><span class="text-gradient">Intelligence.</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-xl font-light">We don't just guess. We use data to drive organic growth that actually impacts your bottom line.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Result Card 1 -->
+                <div class="group relative glass p-8 rounded-3xl hover:border-emerald-500/40 transition-all duration-500">
+                    <div class="mb-6 w-12 h-12 flex items-center justify-center bg-emerald-500/10 rounded-xl text-emerald-400 group-hover:scale-110 transition duration-300">
+                        <i data-lucide="trending-up"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Traffic Surge</h3>
+                    <p class="text-gray-400 mb-6">Increased organic traffic by 450% for a Fintech startup within 6 months.</p>
+                    <div class="opacity-30 group-hover:opacity-100 transition duration-500">
+                         <img src="./seo_growth_chart.png" alt="Growth Chart" class="rounded-xl mt-4">
+                    </div>
+                </div>
+
+                <!-- Result Card 2 -->
+                <div class="group relative glass p-8 rounded-3xl hover:border-blue-500/40 transition-all duration-500">
+                    <div class="mb-6 w-12 h-12 flex items-center justify-center bg-blue-500/10 rounded-xl text-blue-400 group-hover:scale-110 transition duration-300">
+                        <i data-lucide="award"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">#1 Rankings</h3>
+                    <p class="text-gray-400 mb-6">Achieved top positions for high-difficulty keywords in the Luxury E-commerce niche.</p>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-white/5 rounded-full text-xs border border-white/10 uppercase tracking-tighter hover:text-white line-clamp-1">Keyword Research</span>
+                        <span class="px-3 py-1 bg-white/5 rounded-full text-xs border border-white/10 uppercase tracking-tighter hover:text-white line-clamp-1">On-Page SEO</span>
+                    </div>
+                </div>
+
+                <!-- Result Card 3 -->
+                <div class="group relative glass p-8 rounded-3xl hover:border-purple-500/40 transition-all duration-500">
+                    <div class="mb-6 w-12 h-12 flex items-center justify-center bg-purple-500/10 rounded-xl text-purple-400 group-hover:scale-110 transition duration-300">
+                        <i data-lucide="link"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Link Building</h3>
+                    <p class="text-gray-400 mb-6">Acquired high-authority backlinks from DR 80+ sites safely and sustainably.</p>
+                    <div class="mt-4 space-y-2">
+                        <div class="h-2 w-full bg-white/5 rounded-full overflow-hidden">
+                            <div class="h-full bg-purple-500" style="width: 85%"></div>
+                        </div>
+                        <p class="text-xs text-right text-gray-500 font-semibold line-clamp-1">Domain Rating Increase</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section id="contact" class="py-32 px-6">
+        <div class="max-w-4xl mx-auto glass p-12 rounded-[40px] text-center space-y-8 relative overflow-hidden">
+            <div class="absolute -top-24 -left-24 w-64 h-64 bg-emerald-500/10 rounded-full blur-[100px]"></div>
+            <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-blue-500/10 rounded-full blur-[100px]"></div>
+            
+            <h2 class="text-4xl md:text-6xl font-bold">Ready to <span class="text-gradient">Dominate Search?</span></h2>
+            <p class="text-xl text-gray-400 leading-relaxed">Let's build a strategy that actually moves the needle. Get a free SEO audit today.</p>
+            
+            <div class="flex flex-col md:flex-row gap-6 justify-center pt-8">
+                <input type="email" placeholder="Your Work Email" class="px-8 py-4 bg-white/5 border border-white/10 rounded-2xl outline-none focus:border-emerald-500 transition-colors md:w-80 backdrop-blur-sm">
+                <button class="px-10 py-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-2xl transition duration-300 glow">
+                    Get Free Audit
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto flex flex-col md:row justify-between items-center gap-8">
+            <div class="text-xl font-bold text-gradient">AR SEO</div>
+            <div class="text-gray-500 text-sm font-semibold uppercase tracking-widest line-clamp-1">© 2026 Abdul Rehman. All rights reserved.</div>
+            <div class="flex space-x-6 text-gray-400">
+                <a href="#" class="hover:text-emerald-400 transition"><i data-lucide="twitter"></i></a>
+                <a href="#" class="hover:text-emerald-400 transition"><i data-lucide="linkedin"></i></a>
+                <a href="#" class="hover:text-emerald-400 transition"><i data-lucide="github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Init Lucide Icons
+        lucide.createIcons();
+
+        // Reveal on scroll (simpler Intersection Observer)
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
