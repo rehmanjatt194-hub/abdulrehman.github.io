@@ -284,11 +284,64 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "features_bar_Q4xdXr": {
+      "type": "features-bar",
+      "blocks": {
+        "feature_UpmXRU": {
+          "type": "feature",
+          "settings": {
+            "icon": "truck",
+            "custom_icon_svg": "",
+            "title": "Free Shipping",
+            "text": "On order over Rs.2000"
+          }
+        },
+        "feature_Vg8kBp": {
+          "type": "feature",
+          "settings": {
+            "icon": "return",
+            "custom_icon_svg": "",
+            "title": "30 Day Returns",
+            "text": "Easy returns in 7 days"
+          }
+        },
+        "feature_4r4QFK": {
+          "type": "feature",
+          "settings": {
+            "icon": "lock",
+            "custom_icon_svg": "",
+            "title": "Money Guarantee",
+            "text": "Cash On Delivery"
+          }
+        },
+        "feature_Vt6M9f": {
+          "type": "feature",
+          "settings": {
+            "icon": "chat_bubble",
+            "custom_icon_svg": "",
+            "title": "Online Support",
+            "text": "Get us 24/7 at 123-456"
+          }
+        }
+      },
+      "block_order": [
+        "feature_UpmXRU",
+        "feature_Vg8kBp",
+        "feature_4r4QFK",
+        "feature_Vt6M9f"
+      ],
+      "name": "Features Bar",
+      "settings": {
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
     }
   },
   "order": [
     "hero_jVaWmY",
     "product_list_fa6P9H",
-    "circular_categories_TLRmV4"
+    "circular_categories_TLRmV4",
+    "features_bar_Q4xdXr"
   ]
 }
