@@ -269,26 +269,12 @@
   "presets": [
     {
       "name": "t:names.announcement_bar",
-      "blocks": [
-        {
-          "type": "_announcement",
-          "settings": {
-            "text": "✨ 100% Authentic Products"
-          }
-        },
-        {
-          "type": "_announcement",
-          "settings": {
-            "text": "💎 Premium Jewellery & Perfumes"
-          }
-        },
-        {
-          "type": "_announcement",
-          "settings": {
-            "text": "🚛 Free Shipping on all orders"
-          }
+      "blocks": {
+        "announcement_1": {
+          "type": "_announcement"
         }
-      ]
+      },
+      "block_order": ["announcement_1"]
     }
   ]
 }
