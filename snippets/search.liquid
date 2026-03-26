@@ -19,8 +19,12 @@
       aria-label="{{ 'content.search_input_label' | t }}"
       aria-haspopup="dialog"
     >
-      <span class="header-search-label">
-        [Search 🔍]
+      <span class="{% if display_style == 'icon' %}hidden{% else %}mobile:hidden{% endif %}">
+        {{ 'content.search' | t }}
+      </span>
+
+      <span class="svg-wrapper {% if display_style != 'icon' %}desktop:hidden{% endif %}">
+        {{ 'icon-search.svg' | inline_asset_content }}
       </span>
     </button>
   </search-button>
