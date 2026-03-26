@@ -477,6 +477,42 @@
     }
   }
 
+  }
+
+  /* Mockup specific labels */
+  .header-search-label, .header-cart-label {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--color-foreground);
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  /* Navigation Separators */
+  .header__row--bottom .header__columns {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100%;
+  }
+
+  .header__row--bottom .menu-list {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+    gap: 0 !important;
+  }
+
+  .header__row--bottom .menu-list > *:not(:last-child)::after {
+    content: "|";
+    margin: 0 1.5rem;
+    color: var(--color-foreground);
+    opacity: 0.5;
+    font-weight: 300;
+  }
+
   .header[transparent] {
     --language-button-background-color: transparent;
     --language-button-border-color: transparent;
