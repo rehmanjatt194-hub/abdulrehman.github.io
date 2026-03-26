@@ -554,24 +554,25 @@
     justify-content: flex-start !important;
     padding-left: 8% !important;
     text-align: left !important;
-    background: #fdfaf7; /* Soft light tan background to match image */
+    background: transparent !important; /* Remove opaque background */
   }
   .hero__jewelry-content {
-    max-width: 550px;
+    max-width: 600px;
     z-index: 2;
   }
   .hero__jewelry-content .text-block h1,
   .hero__jewelry-content .text-block h2 {
     font-family: "Playfair Display", serif !important;
-    font-size: clamp(40px, 6vw, 72px) !important;
+    font-size: clamp(38px, 6vw, 72px) !important;
     font-weight: 500 !important;
     line-height: 1.1 !important;
     margin: 15px 0 !important;
-    color: #1a1a1a !important;
+    color: #fff !important; /* White text for dark background */
+    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
   }
   .hero__jewelry-content .text-block p {
     font-size: clamp(14px, 2vw, 18px) !important;
-    color: #4a4a4a !important;
+    color: rgba(255,255,255,0.9) !important; /* White text for dark background */
     margin-bottom: 35px !important;
     letter-spacing: 0.05em;
   }
@@ -583,7 +584,7 @@
     font-size: 13px !important;
     font-weight: 500 !important;
     margin-bottom: 10px !important;
-    color: #666 !important;
+    color: rgba(255,255,255,0.8) !important;
   }
   /* Button Styling - Black rectangle */
   .hero__jewelry-content .button-block a,
@@ -638,11 +639,11 @@
 
   /* Fix for image clipping */
   .hero {
-    min-height: 700px !important; /* Taller hero for luxury feel */
+    min-height: 650px !important; 
   }
   .hero__media {
     object-fit: cover !important;
-    object-position: right center !important; /* Move person to right */
+    object-position: center !important; /* Restore normal position */
   }
 
   @media screen and (max-width: 749px) {
