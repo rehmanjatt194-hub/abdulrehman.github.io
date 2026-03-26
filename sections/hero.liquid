@@ -531,13 +531,89 @@
         section-content-wrapper
         {{section.settings.section_width}}
         {% if request.design_mode %}hero__content-wrapper--design-mode{% endif %}
+        hero__content-wrapper--jewelry
       "
       style="{% render 'layout-panel-style', settings: section.settings %}"
     >
-      {% content_for 'blocks' %}
+      <div class="hero__jewelry-content">
+        {% content_for 'blocks' %}
+      </div>
     </div>
   </div>
 </div>
+
+<style>
+  .hero__content-wrapper--jewelry {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start !important; /* Force left align for luxury look */
+    padding-left: 10% !important;
+    text-align: left !important;
+  }
+  .hero__jewelry-content {
+    max-width: 600px;
+    z-index: 2;
+  }
+  .hero__jewelry-content .text-block h1,
+  .hero__jewelry-content .text-block h2 {
+    font-family: "Playfair Display", serif !important; /* Elegant serif for jewelry */
+    font-size: clamp(32px, 5vw, 64px) !important;
+    font-weight: 500 !important;
+    line-height: 1.1 !important;
+    margin: 10px 0 !important;
+    color: inherit;
+  }
+  .hero__jewelry-content .text-block p {
+    font-size: 18px !important;
+    opacity: 0.9;
+    margin-bottom: 30px !important;
+  }
+  /* Style for Top Label */
+  .hero__jewelry-content .text-block:first-child h6,
+  .hero__jewelry-content .text-block:first-child p {
+    text-transform: uppercase !important;
+    letter-spacing: 0.2em !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    margin-bottom: 5px !important;
+  }
+  /* Button Styling */
+  .hero__jewelry-content .button-block a,
+  .hero__jewelry-content .button {
+    background: #000 !important;
+    color: #fff !important;
+    border-radius: 0 !important;
+    padding: 15px 40px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    border: none !important;
+    transition: background 0.3s ease;
+  }
+  .hero__jewelry-content .button-block a:hover {
+    background: #333 !important;
+  }
+
+  /* Fix for image clipping */
+  .hero {
+    min-height: 600px !important; /* Ensure enough height to avoid clipping */
+  }
+  .hero__media {
+    object-fit: cover !important; /* Ensure image fills space proportionally */
+    object-position: center !important;
+  }
+
+  @media screen and (max-width: 749px) {
+    .hero__content-wrapper--jewelry {
+      padding-left: 20px !important;
+      justify-content: center !important;
+      text-align: center !important;
+    }
+    .hero {
+      min-height: 450px !important;
+    }
+  }
+</style>
 
 {% stylesheet %}
   .hero-wrapper {
