@@ -144,22 +144,41 @@ async function renderModule(module) {
                     <thead><tr style="text-align:left; color:var(--text-muted); border-bottom:1px solid var(--border);">
                         <th style="padding:1rem;">Name</th>
                         <th style="padding:1rem;">Contact</th>
-                        <th style="padding:1rem;">Project / Store</th>
-                        <th style="padding:1rem;">Budget</th>
-                        <th style="padding:1rem;">Message</th>
+                        <th style="padding:1rem;">Details</th>
+                        <th style="padding:1rem;">Status</th>
+                        <th style="padding:1rem;">Actions</th>
                     </tr></thead><tbody>`;
             
+            if (!Array.isArray(messages)) {
+                throw new Error(messages.message || "Failed to load messages. Please login again.");
+            }
+
             messages.reverse().forEach(m => {
-                html += `<tr style="border-bottom:1px solid var(--border);">
+                const statusColor = m.status === 'New' ? '#3b82f6' : (m.status === 'Read' ? '#10b981' : '#64748b');
+                
+                html += `<tr style="border-bottom:1px solid var(--border); ${m.status === 'New' ? 'background:rgba(59, 130, 246, 0.05);' : ''}">
                     <td style="padding:1rem;"><strong>${m.name}</strong><br><small>${m.title || ''}</small></td>
                     <td style="padding:1rem;">${m.email}<br><small>${m.phone || 'N/A'}</small></td>
-                    <td style="padding:1rem;"><a href="${m.url}" target="_blank" style="color:var(--primary);">${m.url || 'N/A'}</a></td>
-                    <td style="padding:1rem;"><span style="background:var(--primary); color:white; padding:2px 8px; border-radius:4px; font-size:0.8rem;">$${m.budget || 'N/A'}</span></td>
-                    <td style="padding:1rem; max-width:300px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;" title="${m.message}">${m.message}</td>
+                    <td style="padding:1rem;">Budget: <span style="color:var(--primary);">$${m.budget || 'N/A'}</span><br>URL: <a href="${m.url}" target="_blank" style="color:var(--text-muted);">${m.url || 'N/A'}</a></td>
+                    <td style="padding:1rem;">
+                        <span style="background:${statusColor}; color:white; padding:4px 8px; border-radius:4px; font-size:0.75rem; font-weight:bold;">${m.status}</span>
+                    </td>
+                    <td style="padding:1rem; display:flex; gap:0.5rem; flex-wrap:wrap;">
+                        <button class="btn-view-msg" data-name="${m.name}" data-msg="${encodeURIComponent(m.message)}" style="background:var(--primary); color:white; border:none; padding:4px 8px; border-radius:4px; cursor:pointer; font-size:0.8rem;">Read</button>
+                        <button class="btn-toggle-msg" data-id="${m._id}" data-status="${m.status}" style="background:none; border:1px solid var(--border); color:var(--text-muted); padding:4px 8px; border-radius:4px; cursor:pointer; font-size:0.8rem;">Change Status</button>
+                    </td>
                 </tr>`;
             });
             html += `</tbody></table></div>`;
             div.innerHTML = html;
+
+            // Bind Event Listeners
+            div.querySelectorAll('.btn-view-msg').forEach(btn => {
+                btn.onclick = () => window.openMessageModal(btn.dataset.name, decodeURIComponent(btn.dataset.msg));
+            });
+            div.querySelectorAll('.btn-toggle-msg').forEach(btn => {
+                btn.onclick = () => toggleMessageStatus(btn.dataset.id, btn.dataset.status);
+            });
 
         } else {
             let endpoint = `${API_URL}/content`;
@@ -185,6 +204,10 @@ async function renderModule(module) {
                         <th style="padding:1rem;">Actions</th>
                     </tr></thead><tbody>`;
             
+                if (!Array.isArray(items)) {
+                    throw new Error(items.message || `Failed to load ${module}. Please login again.`);
+                }
+
                 items.forEach(item => {
                     let subtext = 'N/A';
                     if (module === 'blogs') subtext = item.category;
@@ -414,3 +437,93 @@ function logout() {
     localStorage.removeItem('adminUser');
     window.location.href = 'login.html';
 }
+
+/**
+ * Toggle Message Status
+ */
+async function toggleMessageStatus(id, currentStatus) {
+    const token = localStorage.getItem('adminToken');
+    // Cycle: New -> Read -> Replied -> New
+    let nextStatus = 'New';
+    if (currentStatus === 'New') nextStatus = 'Read';
+    else if (currentStatus === 'Read') nextStatus = 'Replied';
+
+    try {
+        const res = await fetch(`${API_URL}/messages/${id}`, {
+            method: 'PUT',
+            headers: { 
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json' 
+            },
+            body: JSON.stringify({ status: nextStatus })
+        });
+
+        if (res.ok) {
+            showToast(`Message marked as ${nextStatus}`);
+            renderModule('messages');
+        } else {
+            const err = await res.json();
+            showToast(`Error: ${err.message}`, 'error');
+        }
+    } catch (err) {
+        showToast(`Server Error: ${err.message}`, 'error');
+    }
+}
+
+/**
+ * Custom Modal for Reading Full Messages
+ */
+window.openMessageModal = function(name, messageText) {
+    console.log("Opening modal for:", name);
+    let modal = document.getElementById('messageReaderModal');
+    if (!modal) {
+        console.log("Creating new modal DOM element");
+        modal = document.createElement('div');
+        modal.id = 'messageReaderModal';
+        modal.style.position = 'fixed';
+        modal.style.top = '0';
+        modal.style.left = '0';
+        modal.style.width = '100vw';
+        modal.style.height = '100vh';
+        modal.style.backgroundColor = 'rgba(15, 23, 42, 0.9)';
+        modal.style.backdropFilter = 'blur(4px)';
+        modal.style.display = 'flex';
+        modal.style.alignItems = 'center';
+        modal.style.justifyContent = 'center';
+        modal.style.zIndex = '9999';
+        modal.style.opacity = '0';
+        modal.style.visibility = 'hidden';
+        modal.style.transition = 'all 0.3s ease';
+
+        modal.innerHTML = `
+            <div style="background:var(--bg-card); border:1px solid var(--border); border-radius:1rem; max-width:600px; w-full; padding:2rem; box-shadow:0 25px 50px -12px rgba(0,0,0,0.5); transform:scale(0.95); transition:all 0.3s ease;" id="msgModalContent">
+                <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); padding-bottom:1rem; margin-bottom:1rem;">
+                    <h3 style="margin:0; font-size:1.25rem;">Message from <span id="msgModalName" style="color:var(--primary);"></span></h3>
+                    <button onclick="closeMessageModal()" style="background:none; border:none; color:var(--text-muted); cursor:pointer; font-size:1.5rem; line-height:1;">&times;</button>
+                </div>
+                <div id="msgModalText" style="color:var(--text-color); font-size:1rem; line-height:1.6; max-height:60vh; overflow-y:auto; padding-right:0.5rem; white-space:pre-wrap;"></div>
+                <div style="margin-top:2rem; text-align:right;">
+                    <button onclick="closeMessageModal()" class="btn-primary" style="padding:0.5rem 1.5rem;">Close</button>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+    }
+
+    document.getElementById('msgModalName').innerText = name;
+    document.getElementById('msgModalText').innerText = messageText;
+
+    // Show modal
+    modal.style.visibility = 'visible';
+    modal.style.opacity = '1';
+    document.getElementById('msgModalContent').style.transform = 'scale(1)';
+}
+
+window.closeMessageModal = function() {
+    const modal = document.getElementById('messageReaderModal');
+    if (modal) {
+        modal.style.opacity = '0';
+        modal.style.visibility = 'hidden';
+        document.getElementById('msgModalContent').style.transform = 'scale(0.95)';
+    }
+};

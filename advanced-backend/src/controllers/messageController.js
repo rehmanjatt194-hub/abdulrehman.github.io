@@ -31,3 +31,19 @@ export const deleteMessage = async (req, res) => {
         res.status(404).json({ message: 'Message not found' });
     }
 };
+
+/**
+ * @desc Update message status (Admin)
+ */
+export const updateMessageStatus = async (req, res) => {
+    const { status } = req.body;
+    const item = await Message.findById(req.params.id);
+
+    if (item) {
+        item.status = status || item.status;
+        const updatedItem = await item.save();
+        res.json(updatedItem);
+    } else {
+        res.status(404).json({ message: 'Message not found' });
+    }
+};
