@@ -4,6 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Technical SEO Specialist specializing in high-performance websites, Core Web Vitals, and organic growth for e-commerce and SaaS brands.">
+    <meta name="keywords" content="SEO Specialist, Technical SEO, Core Web Vitals, Search Engine Optimization, Lead Generation, Growth Marketing">
+    <meta name="author" content="Abdul Rehman">
+    <meta property="og:title" content="Abdul Rehman | SEO Specialist & Growth Partner">
+    <meta property="og:description" content="Dominate search results with data-driven Technical SEO strategies that convert.">
+    <meta property="og:type" content="website">
     <title>Abdul Rehman | SEO Specialist</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -125,7 +131,82 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Blog Content Styling in Modal */
+        .blog-content-full {
+            line-height: 1.8;
+            color: #cbd5e1;
+            font-size: 1.05rem;
+        }
+        .blog-content-full h1, .blog-content-full h2, .blog-content-full h3 {
+            color: white;
+            font-weight: 800;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            display: block;
+        }
+        .blog-content-full h1 { font-size: 2.25rem; }
+        .blog-content-full h2 { font-size: 1.875rem; }
+        .blog-content-full h3 { font-size: 1.5rem; }
+        .blog-content-full p { margin-bottom: 1.25rem; }
+        .blog-content-full b, .blog-content-full strong { color: white; font-weight: 700; }
+        .blog-content-full a { color: #3b82f6; text-decoration: underline; font-weight: 600; }
+        .blog-content-full ul, .blog-content-full ol { margin-bottom: 1.5rem; padding-left: 1.5rem; }
+        .blog-content-full ul { list-style-type: disc; }
+        .blog-content-full ol { list-style-type: decimal; }
+        .blog-content-full li { margin-bottom: 0.5rem; }
+        .blog-content-full blockquote {
+            border-left: 4px solid #3b82f6;
+            padding-left: 1.5rem;
+            font-style: italic;
+            margin: 2rem 0;
+            color: #94a3b8;
+        }
     </style>
+
+    <!-- JSON-LD Schema Markup for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "ProfessionalService",
+                "@id": "https://rehmanjatt194.github.io/#organization",
+                "name": "Abdul Rehman - SEO Expert",
+                "url": "https://rehmanjatt194.github.io/",
+                "logo": "https://rehmanjatt194.github.io/images/abdul_rehman.jpg",
+                "image": "https://rehmanjatt194.github.io/images/abdul_rehman.jpg",
+                "description": "Revenue-Driven Growth Partner and SEO specialist helping businesses dominate search results through technical SEO, content strategy, and backlink authority.",
+                "telephone": "+923277007987",
+                "email": "rehmanjatt194@gmail.com",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressCountry": "PK"
+                },
+                "priceRange": "$$$",
+                "sameAs": [
+                    "https://www.linkedin.com/",
+                    "https://wa.me/923277007987"
+                ]
+            },
+            {
+                "@type": "Person",
+                "@id": "https://rehmanjatt194.github.io/#person",
+                "name": "Abdul Rehman",
+                "jobTitle": "SEO Specialist & Growth Partner",
+                "url": "https://rehmanjatt194.github.io/",
+                "image": "https://rehmanjatt194.github.io/images/abdul_rehman.jpg",
+                "worksFor": {
+                    "@id": "https://rehmanjatt194.github.io/#organization"
+                },
+                "sameAs": [
+                    "https://www.linkedin.com/"
+                ]
+            }
+        ]
+    }
+    </script>
 </head>
 
 <body class="antialiased">
@@ -161,12 +242,14 @@
             </div>
 
             <!-- Center: Primary Navigation -->
-            <nav class="hidden xl:flex items-center gap-10">
+            <nav class="hidden lg:flex items-center gap-10">
                 <a href="#services"
                     class="text-sm font-bold text-slate-400 hover:text-white hover:translate-y-[-1px] transition-all">INFRASTRUCTURE</a>
                 <a href="#case-studies"
                     class="text-sm font-bold text-slate-400 hover:text-white hover:translate-y-[-1px] transition-all">CASE
                     STUDY</a>
+                <a href="#blog-section"
+                    class="text-sm font-bold text-slate-400 hover:text-white hover:translate-y-[-1px] transition-all">BLOG</a>
                 <a href="#process-section"
                     class="text-sm font-bold text-slate-400 hover:text-white hover:translate-y-[-1px] transition-all">PROCESS</a>
                 <a href="#reviews"
@@ -250,16 +333,14 @@
                             For New Projects</span>
                     </div>
 
-                    <h1 class="text-5xl md:text-7xl lg:text-8xl font-black leading-[0.9] tracking-tighter">
-                        REHMAN <br />
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">SEO
-                            EXPERT.</span>
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-black leading-[1.1] tracking-tight relative z-10">
+                        Convert Search Visibility into <br />
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">Pure Business ROI.</span>
                     </h1>
 
                     <p
-                        class="text-slate-400 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium opacity-80">
-                        I build data-driven organic growth engines that help businesses dominate search results and
-                        maximize ROI.
+                        class="text-slate-400 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium opacity-80 relative z-10">
+                        I don't just deliver traffic—I architect scalable organic growth engines that translate search rankings into measurable ROI, high-quality leads, and predictable revenue for leading agencies.
                     </p>
 
                     <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 pt-4">
@@ -390,6 +471,43 @@
                 <div class="text-xs font-medium text-slate-400 uppercase tracking-widest">Industries Served</div>
             </div>
         </div>
+
+        <!-- Trusted by Logos Marquee -->
+        <div class="mt-16 overflow-hidden relative w-full pt-8 border-t border-slate-800/50 reveal">
+            <div class="text-center mb-8">
+                <span class="text-xs font-bold text-slate-500 uppercase tracking-[0.2em]">Agencies & Brands Handled</span>
+            </div>
+            <!-- Gradient Masks -->
+            <div class="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-slate-900 to-transparent z-10 pointer-events-none mt-16"></div>
+            <div class="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-slate-900 to-transparent z-10 pointer-events-none mt-16"></div>
+            
+            <div class="flex animate-[scroll_30s_linear_infinite] w-[max-content] hover:animate-[scroll_30s_linear_infinite_paused] group">
+                <!-- Logos Row 1 -->
+                <div class="flex items-center gap-16 px-8 text-slate-500">
+                    <svg viewBox="0 0 150 40" class="h-7 hover:text-blue-400 opacity-60 hover:opacity-100 transition-all duration-300" fill="currentColor"><text x="0" y="28" font-family="Outfit, sans-serif" font-weight="800" font-size="24">FashionHouse</text></svg>
+                    <svg viewBox="0 0 120 40" class="h-7 hover:text-blue-400 opacity-60 hover:opacity-100 transition-all duration-300" fill="currentColor"><text x="0" y="28" font-family="Outfit, sans-serif" font-weight="800" font-size="24">EduLearn</text></svg>
+                    <svg viewBox="0 0 120 40" class="h-7 hover:text-blue-400 opacity-60 hover:opacity-100 transition-all duration-300" fill="currentColor"><text x="0" y="28" font-family="Outfit, sans-serif" font-weight="800" font-size="24">TechStart</text></svg>
+                    <svg viewBox="0 0 110 40" class="h-8 hover:text-blue-400 opacity-60 hover:opacity-100 transition-all duration-300" fill="currentColor"><text x="0" y="28" font-family="Outfit, sans-serif" font-weight="900" font-style="italic" font-size="24">E-Shop</text></svg>
+                    <svg viewBox="0 0 110 40" class="h-6 hover:text-blue-400 opacity-60 hover:opacity-100 transition-all duration-300" fill="currentColor"><text x="0" y="28" font-family="Inter, sans-serif" font-weight="700" letter-spacing="2" font-size="22">NEXUS</text></svg>
+                    <svg viewBox="0 0 110 40" class="h-7 hover:text-blue-400 opacity-60 hover:opacity-100 transition-all duration-300" fill="currentColor"><text x="0" y="28" font-family="Outfit, sans-serif" font-weight="300" letter-spacing="1" font-size="26">elevate.</text></svg>
+                </div>
+                <!-- Logos Row Duplicate (for seamless loop) -->
+                <div class="flex items-center gap-16 px-8 text-slate-500">
+                    <svg viewBox="0 0 150 40" class="h-7 hover:text-blue-400 opacity-60 hover:opacity-100 transition-all duration-300" fill="currentColor"><text x="0" y="28" font-family="Outfit, sans-serif" font-weight="800" font-size="24">FashionHouse</text></svg>
+                    <svg viewBox="0 0 120 40" class="h-7 hover:text-blue-400 opacity-60 hover:opacity-100 transition-all duration-300" fill="currentColor"><text x="0" y="28" font-family="Outfit, sans-serif" font-weight="800" font-size="24">EduLearn</text></svg>
+                    <svg viewBox="0 0 120 40" class="h-7 hover:text-blue-400 opacity-60 hover:opacity-100 transition-all duration-300" fill="currentColor"><text x="0" y="28" font-family="Outfit, sans-serif" font-weight="800" font-size="24">TechStart</text></svg>
+                    <svg viewBox="0 0 110 40" class="h-8 hover:text-blue-400 opacity-60 hover:opacity-100 transition-all duration-300" fill="currentColor"><text x="0" y="28" font-family="Outfit, sans-serif" font-weight="900" font-style="italic" font-size="24">E-Shop</text></svg>
+                    <svg viewBox="0 0 110 40" class="h-6 hover:text-blue-400 opacity-60 hover:opacity-100 transition-all duration-300" fill="currentColor"><text x="0" y="28" font-family="Inter, sans-serif" font-weight="700" letter-spacing="2" font-size="22">NEXUS</text></svg>
+                    <svg viewBox="0 0 110 40" class="h-7 hover:text-blue-400 opacity-60 hover:opacity-100 transition-all duration-300" fill="currentColor"><text x="0" y="28" font-family="Outfit, sans-serif" font-weight="300" letter-spacing="1" font-size="26">elevate.</text></svg>
+                </div>
+            </div>
+            <style>
+                @keyframes scroll {
+                    0% { transform: translateX(0); }
+                    100% { transform: translateX(-50%); }
+                }
+            </style>
+        </div>
     </section>
 
     <!-- Services Section -->
@@ -403,10 +521,9 @@
                     class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center mb-6 border border-blue-500/20 group-hover:bg-blue-500/20 transition-colors">
                     <i data-lucide="headphones" class="w-5 h-5 text-blue-400"></i>
                 </div>
-                <h3 class="text-xl font-bold text-white mb-3">Consultation</h3>
+                <h3 class="text-xl font-bold text-white mb-3">Semantic SEO & Strategy</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">
-                    I offer expert SEO consultations to guide your business toward effective strategies, ensuring
-                    sustainable growth and better online visibility.
+                    We move beyond simple keywords. Our semantic approach builds topical authority by mapping entities and intent, ensuring your brand dominates entire search categories, not just individual terms.
                 </p>
             </div>
 
@@ -416,10 +533,9 @@
                     class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center mb-6 border border-blue-500/20 group-hover:bg-blue-500/20 transition-colors">
                     <i data-lucide="crosshair" class="w-5 h-5 text-blue-400"></i>
                 </div>
-                <h3 class="text-xl font-bold text-white mb-3">Tailored SEO Strategy</h3>
+                <h3 class="text-xl font-bold text-white mb-3">Technical Infrastructure</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">
-                    I create custom SEO strategies designed to fit your business, based on market and competitor
-                    analysis, to help you stay ahead of the competition.
+                    A high-performance site is the foundation of success. We optimize Core Web Vitals, server architecture, and advanced Schema markup to ensure search engines crawl and index your site with 100% efficiency.
                 </p>
             </div>
 
@@ -429,10 +545,9 @@
                     class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center mb-6 border border-blue-500/20 group-hover:bg-blue-500/20 transition-colors">
                     <i data-lucide="wrench" class="w-5 h-5 text-blue-400"></i>
                 </div>
-                <h3 class="text-xl font-bold text-white mb-3">Technical SEO</h3>
+                <h3 class="text-xl font-bold text-white mb-3">Entity-Based Optimization</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">
-                    I optimize your website's technical performance, ensuring smooth operation, faster load times, and
-                    improved search engine rankings.
+                    We align your content with Google's Knowledge Graph. By optimizing for entities and relationships, we provide the context search engines need to rank you as a trusted authority in your niche.
                 </p>
             </div>
 
@@ -442,10 +557,9 @@
                     class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center mb-6 border border-blue-500/20 group-hover:bg-blue-500/20 transition-colors">
                     <i data-lucide="search" class="w-5 h-5 text-blue-400"></i>
                 </div>
-                <h3 class="text-xl font-bold text-white mb-3">Competitor Landscape Analysis</h3>
+                <h3 class="text-xl font-bold text-white mb-3">Full-Funnel CRO</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">
-                    I analyze your competitors to uncover opportunities and position your business as a market leader,
-                    improving your search rankings and online presence.
+                    Traffic is vanity; revenue is sanity. We combine SEO with data-backed Conversion Rate Optimization (CRO) strategies to turn organic visitors into loyal customers, maximizing the ROI of every click.
                 </p>
             </div>
         </div>
@@ -455,67 +569,9 @@
     <!-- Case Studies Section -->
     <section id="case-studies" class="max-w-7xl mx-auto px-4 md:px-12 py-20 border-t border-slate-800 reveal">
         <h2 class="text-3xl font-bold text-white mb-10">Case Studies</h2>
-
-        <div class="space-y-6">
-            <!-- Case Study 1 -->
-            <div class="stat-card flex flex-col md:flex-row overflow-hidden group">
-                <!-- Image Side -->
-                <div class="w-full md:w-2/5 relative min-h-[250px] md:min-h-full">
-                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1000&auto=format&fit=crop"
-                        alt="FashionHouse Case Study"
-                        class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-slate-900/50 group-hover:bg-slate-900/40 transition-colors"></div>
-                    <div class="absolute inset-0 flex items-center justify-center p-6 text-center">
-                        <span class="text-4xl font-black text-white tracking-tighter drop-shadow-xl flex items-center">
-                            Fashion<i data-lucide="home" class="w-8 h-8 mx-0.5 mt-[-6px]"></i>ouse
-                        </span>
-                    </div>
-                </div>
-                <!-- Text Side -->
-                <div class="w-full md:w-3/5 p-8 md:p-10 flex flex-col justify-center relative">
-                    <div
-                        class="absolute top-8 right-8 w-11 h-11 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all shadow-sm">
-                        <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-4 pr-16 leading-snug">FashionHouse SEO Success: 120%
-                        Traffic Boost</h3>
-                    <p class="text-slate-400 leading-relaxed">
-                        We partnered with FashionHouse, a popular online clothing store, to improve their site's traffic
-                        and search engine visibility. By conducting a full SEO audit, we identified areas of improvement
-                        such as keyword targeting and content structure.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Case Study 2 -->
-            <div class="stat-card flex flex-col md:flex-row overflow-hidden group">
-                <!-- Image Side -->
-                <div class="w-full md:w-2/5 relative min-h-[250px] md:min-h-full">
-                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1000&auto=format&fit=crop"
-                        alt="EduLearn Case Study"
-                        class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-slate-900/50 group-hover:bg-slate-900/40 transition-colors"></div>
-                    <div class="absolute inset-0 flex items-center justify-center p-6 text-center">
-                        <span class="text-4xl font-black text-white tracking-tighter drop-shadow-xl">
-                            EduLearn
-                        </span>
-                    </div>
-                </div>
-                <!-- Text Side -->
-                <div class="w-full md:w-3/5 p-8 md:p-10 flex flex-col justify-center relative">
-                    <div
-                        class="absolute top-8 right-8 w-11 h-11 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all shadow-sm">
-                        <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-4 pr-16 leading-snug">EduLearn Platform: 75% Growth in
-                        Organic Traffic</h3>
-                    <p class="text-slate-400 leading-relaxed">
-                        EduLearn, an e-learning platform, approached us to enhance their search engine visibility. We
-                        created a tailored SEO plan that focused on boosting authority through strategic link-building
-                        and enhancing keyword relevance across their educational content.
-                    </p>
-                </div>
-            </div>
+        <div id="projects-container" class="space-y-6">
+            <!-- Dynamic Projects will be injected here -->
+        </div>
         </div>
     </section>
 
@@ -537,48 +593,61 @@
         </div>
 
         <div class="overflow-hidden relative rounded-2xl">
-            <div id="slider-track" class="flex transition-transform duration-500 ease-in-out" style="width: 300%;">
+            <div id="slider-track" class="flex transition-transform duration-500 ease-in-out" style="width: 400%;">
 
                 <!-- Slide 1 -->
-                <div class="w-1/3 px-2 md:px-0">
+                <div class="w-1/4 px-2 md:px-0">
                     <div
                         class="stat-card p-6 md:p-10 flex flex-col md:flex-row gap-8 items-center h-full group hover:border-primary transition-colors">
                         <div
                             class="w-full md:w-2/5 min-h-[200px] md:min-h-[240px] bg-blue-500/10 rounded-2xl flex items-center justify-center border border-blue-500/20 group-hover:bg-blue-500/20 py-8 md:py-0 transition-colors">
-                            <i data-lucide="route" class="w-20 h-20 md:w-24 md:h-24 text-blue-400"></i>
+                            <i data-lucide="search" class="w-20 h-20 md:w-24 md:h-24 text-blue-400"></i>
                         </div>
                         <div class="w-full md:w-3/5 space-y-4">
-                            <h3 class="text-xl md:text-2xl font-bold text-white">1. SEO Strategy Development</h3>
+                            <h3 class="text-xl md:text-2xl font-bold text-white">1. Discovery & Audit</h3>
                             <p class="text-slate-400 leading-relaxed max-w-2xl text-sm md:text-base">
-                                We begin by developing a custom SEO strategy based on in-depth research into your
-                                business, industry, and audience. Our plan focuses on increasing your organic traffic,
-                                improving search rankings, and meeting your business goals.
+                                We begin with a deep dive into your technical infrastructure and market position. This includes a comprehensive audit of crawlability, site architecture, and competitive gaps to build a data-driven roadmap.
                             </p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Slide 2 -->
-                <div class="w-1/3 px-2 md:px-0">
+                <div class="w-1/4 px-2 md:px-0">
                     <div
                         class="stat-card p-6 md:p-10 flex flex-col md:flex-row gap-8 items-center h-full group hover:border-primary transition-colors">
                         <div
                             class="w-full md:w-2/5 min-h-[200px] md:min-h-[240px] bg-blue-500/10 rounded-2xl flex items-center justify-center border border-blue-500/20 group-hover:bg-blue-500/20 py-8 md:py-0 transition-colors">
-                            <i data-lucide="file-code-2" class="w-20 h-20 md:w-24 md:h-24 text-blue-400"></i>
+                            <i data-lucide="layout-template" class="w-20 h-20 md:w-24 md:h-24 text-blue-400"></i>
                         </div>
                         <div class="w-full md:w-3/5 space-y-4">
-                            <h3 class="text-xl md:text-2xl font-bold text-white">2. On-Page Optimization</h3>
+                            <h3 class="text-xl md:text-2xl font-bold text-white">2. On-Page Strategy</h3>
                             <p class="text-slate-400 leading-relaxed max-w-2xl text-sm md:text-base">
-                                We optimize your website's architecture, meta tags, and content to ensure search engines
-                                can easily crawl and understand your pages. We focus on delivering value to users while
-                                maximizing keyword relevance and usability.
+                                We implement advanced on-page optimization using semantic search principles. This stage focuses on content clusters, entity-based mapping, and intent alignment to capture high-value search real estate.
                             </p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Slide 3 -->
-                <div class="w-1/3 px-2 md:px-0">
+                <div class="w-1/4 px-2 md:px-0">
+                    <div
+                        class="stat-card p-6 md:p-10 flex flex-col md:flex-row gap-8 items-center h-full group hover:border-primary transition-colors">
+                        <div
+                            class="w-full md:w-2/5 min-h-[200px] md:min-h-[240px] bg-blue-500/10 rounded-2xl flex items-center justify-center border border-blue-500/20 group-hover:bg-blue-500/20 py-8 md:py-0 transition-colors">
+                            <i data-lucide="rocket" class="w-20 h-20 md:w-24 md:h-24 text-blue-400"></i>
+                        </div>
+                        <div class="w-full md:w-3/5 space-y-4">
+                            <h3 class="text-xl md:text-2xl font-bold text-white">3. Authority Building</h3>
+                            <p class="text-slate-400 leading-relaxed max-w-2xl text-sm md:text-base">
+                                We execute a safe, scalable outreach strategy to acquire high-DA backlinks from contextually relevant sources. Our goal is to cement your domain authority and drive sustainable organic growth.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="w-1/4 px-2 md:px-0">
                     <div
                         class="stat-card p-6 md:p-10 flex flex-col md:flex-row gap-8 items-center h-full group hover:border-primary transition-colors">
                         <div
@@ -586,11 +655,9 @@
                             <i data-lucide="trending-up" class="w-20 h-20 md:w-24 md:h-24 text-blue-400"></i>
                         </div>
                         <div class="w-full md:w-3/5 space-y-4">
-                            <h3 class="text-xl md:text-2xl font-bold text-white">3. Continuous Growth & Authority</h3>
+                            <h3 class="text-xl md:text-2xl font-bold text-white">4. Performance Scaling</h3>
                             <p class="text-slate-400 leading-relaxed max-w-2xl text-sm md:text-base">
-                                Our team builds high-quality backlinks and continuously monitors your performance,
-                                adapting our strategies to maintain long-term search engine dominance and keeping you
-                                ahead of your competitors.
+                                The final stage focuses on continuous monitoring and performance scaling. We refine your funnel using CRO best practices to ensure your organic growth translates directly into predictable revenue.
                             </p>
                         </div>
                     </div>
@@ -605,7 +672,7 @@
                 const prevBtn = document.getElementById('prev-slide');
                 const nextBtn = document.getElementById('next-slide');
                 let currentSlide = 0;
-                const totalSlides = 3;
+                const totalSlides = 4;
 
                 function updateSlider() {
                     const transformValue = -(currentSlide * (100 / totalSlides));
@@ -632,6 +699,73 @@
                 updateSlider();
             });
         </script>
+    </section>
+
+    <!-- The Tech Stack Section -->
+    <section class="max-w-7xl mx-auto px-4 md:px-12 py-20 border-t border-slate-800 reveal">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">The Tech Stack</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto text-lg hover:text-white transition-colors">I leverage industry-standard technical tools like GA4, Ahrefs, SEMrush, and Screaming Frog to deliver unshakeable authority and growth.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Analytics Tools -->
+            <div class="bg-slate-800/40 border border-slate-700/50 rounded-2xl p-8 hover:border-blue-500/50 transition-colors group">
+                <div class="w-14 h-14 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <i data-lucide="bar-chart-2" class="w-7 h-7 text-blue-400"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-4">Analytics & Tracking</h3>
+                <ul class="space-y-3">
+                    <li class="flex items-center gap-3 text-slate-300 font-medium">
+                        <i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500"></i> Google Analytics 4
+                    </li>
+                    <li class="flex items-center gap-3 text-slate-300 font-medium">
+                        <i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500"></i> Google Search Console
+                    </li>
+                    <li class="flex items-center gap-3 text-slate-300 font-medium">
+                        <i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500"></i> Looker Studio
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Research Tools -->
+            <div class="bg-slate-800/40 border border-slate-700/50 rounded-2xl p-8 hover:border-purple-500/50 transition-colors group">
+                <div class="w-14 h-14 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <i data-lucide="search" class="w-7 h-7 text-purple-400"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-4">Research & Strategy</h3>
+                <ul class="space-y-3">
+                    <li class="flex items-center gap-3 text-slate-300 font-medium">
+                        <i data-lucide="check-circle-2" class="w-5 h-5 text-purple-500"></i> SEMrush Pro
+                    </li>
+                    <li class="flex items-center gap-3 text-slate-300 font-medium">
+                        <i data-lucide="check-circle-2" class="w-5 h-5 text-purple-500"></i> Ahrefs
+                    </li>
+                    <li class="flex items-center gap-3 text-slate-300 font-medium">
+                        <i data-lucide="check-circle-2" class="w-5 h-5 text-purple-500"></i> Screaming Frog
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Technical Tools -->
+            <div class="bg-slate-800/40 border border-slate-700/50 rounded-2xl p-8 hover:border-emerald-500/50 transition-colors group">
+                <div class="w-14 h-14 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <i data-lucide="terminal" class="w-7 h-7 text-emerald-400"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-4">Technical SEO</h3>
+                <ul class="space-y-3">
+                    <li class="flex items-center gap-3 text-slate-300 font-medium">
+                        <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500"></i> PageSpeed Insights
+                    </li>
+                    <li class="flex items-center gap-3 text-slate-300 font-medium">
+                        <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500"></i> Schema Markup Generator
+                    </li>
+                    <li class="flex items-center gap-3 text-slate-300 font-medium">
+                        <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500"></i> Google Lighthouse
+                    </li>
+                </ul>
+            </div>
+        </div>
     </section>
 
     <!-- SEO Growth Section -->
@@ -689,7 +823,7 @@
             <div class="w-full lg:w-1/2 space-y-6">
                 <h2 class="text-3xl md:text-5xl font-bold text-white leading-tight">
                     Get to Know the SEO Expert <br>
-                    <span class="text-slate-300 font-medium">Behind Your Success</span>
+                    <span class="text-slate-300 font-medium">The Strategic Architect Behind Your Search Dominance.</span>
                 </h2>
                 <p class="text-slate-400 leading-relaxed text-lg">
                     Hi, I'm Abdul Rehman, an SEO specialist with over a decade of experience helping businesses
@@ -918,24 +1052,21 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
             </div>
         </div>
 
         <script>
-            document.addEventListener('DOMContentLoaded', () => {
+            function initReviewsSlider(totalItems) {
                 const track = document.getElementById('reviews-track');
                 const prevBtn = document.getElementById('prev-review');
                 const nextBtn = document.getElementById('next-review');
 
                 let currentIndex = 0;
-                const totalItems = 5;
                 let autoPlayInterval;
 
                 function updateSlider() {
                     let itemsPerView = window.innerWidth >= 768 ? 3 : 1;
-                    const maxIndex = totalItems - itemsPerView;
+                    const maxIndex = Math.max(0, totalItems - itemsPerView);
 
                     if (currentIndex > maxIndex) currentIndex = maxIndex;
                     if (currentIndex < 0) currentIndex = 0;
@@ -957,14 +1088,14 @@
                     if (currentIndex < maxIndex) {
                         currentIndex++;
                     } else {
-                        currentIndex = 0; // Loop back to the start
+                        currentIndex = 0;
                     }
                     updateSlider();
                 }
 
                 function startAutoPlay() {
                     clearInterval(autoPlayInterval);
-                    autoPlayInterval = setInterval(slideNext, 3500); // Slide every 3.5 seconds
+                    autoPlayInterval = setInterval(slideNext, 3500);
                 }
 
                 function stopAutoPlay() {
@@ -975,7 +1106,7 @@
                     if (currentIndex > 0) {
                         currentIndex--;
                         updateSlider();
-                        startAutoPlay(); // Reset timer upon manual click
+                        startAutoPlay();
                     }
                 });
 
@@ -985,11 +1116,10 @@
                     if (currentIndex < maxIndex) {
                         currentIndex++;
                         updateSlider();
-                        startAutoPlay(); // Reset timer upon manual click
+                        startAutoPlay();
                     }
                 });
 
-                // Pause Autoplay on Hover
                 const sliderContainer = track.parentElement;
                 sliderContainer.addEventListener('mouseenter', stopAutoPlay);
                 sliderContainer.addEventListener('mouseleave', startAutoPlay);
@@ -998,16 +1128,30 @@
 
                 setTimeout(() => {
                     updateSlider();
-                    startAutoPlay(); // Start auto-play after initial setup
+                    startAutoPlay();
                 }, 150);
-            });
+            }
         </script>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog-section" class="max-w-7xl mx-auto px-4 md:px-12 py-20 border-t border-slate-800 reveal">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Latest Insights</h2>
+                <p class="text-slate-400 max-w-2xl">Sharing my thoughts on technical SEO, growth strategies, and the future of search.</p>
+            </div>
+            <a href="#" class="text-sm font-black text-blue-400 uppercase tracking-widest hover:text-white transition-colors">View All Posts</a>
+        </div>
+
+        <div id="blog-container" class="grid md:grid-cols-3 gap-8">
+            <div class="text-slate-500 italic">Fetching latest updates...</div>
+        </div>
     </section>
 
     <!-- FAQ Section -->
     <section class="max-w-7xl mx-auto px-4 md:px-12 py-24 border-t border-slate-800 reveal" id="faqs">
         <div class="flex flex-col lg:flex-row gap-16">
-            <!-- Left Side: Header & CTA -->
             <div class="w-full lg:w-1/3">
                 <h2 class="text-5xl md:text-6xl font-black text-white flex items-end tracking-tighter mb-6 relative">
                     FAQ<span class="w-3 h-3 bg-blue-500 rounded-full mb-3 ml-1 absolute bottom-0 right-[-14px]"></span>
@@ -1031,117 +1175,15 @@
                 </div>
             </div>
 
-            <!-- Right Side: Accordion List -->
-            <div class="w-full lg:w-2/3 space-y-3">
-
-                <!-- FAQ 1 -->
-                <details
-                    class="group bg-slate-800/40 border border-slate-700/50 rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden hover:border-slate-600 transition-colors">
-                    <summary
-                        class="flex items-center justify-between cursor-pointer p-6 font-semibold text-slate-200 hover:text-white transition-colors outline-none selection:border-none">
-                        How long does it take to see tangible SEO results?
-                        <i data-lucide="plus"
-                            class="w-5 h-5 text-slate-500 transition-transform duration-300 group-open:rotate-45"></i>
-                    </summary>
-                    <div
-                        class="px-6 pb-6 text-slate-400 text-sm leading-relaxed border-t border-slate-700/50 mt-2 pt-4">
-                        SEO is a long-term strategy. Typically, it takes between 3 to 6 months to start seeing
-                        significant improvements in rankings and organic traffic, depending on the competitiveness of
-                        your industry and your site's current standing.
-                    </div>
-                </details>
-
-                <!-- FAQ 2 -->
-                <details
-                    class="group bg-slate-800/40 border border-slate-700/50 rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden hover:border-slate-600 transition-colors">
-                    <summary
-                        class="flex items-center justify-between cursor-pointer p-6 font-semibold text-slate-200 hover:text-white transition-colors outline-none selection:border-none">
-                        Can you guarantee a #1 ranking on Google?
-                        <i data-lucide="plus"
-                            class="w-5 h-5 text-slate-500 transition-transform duration-300 group-open:rotate-45"></i>
-                    </summary>
-                    <div
-                        class="px-6 pb-6 text-slate-400 text-sm leading-relaxed border-t border-slate-700/50 mt-2 pt-4">
-                        Nobody can guarantee a #1 ranking due to Google's constantly changing algorithms. However, I
-                        guarantee implementing the best data-driven practices that give your site the highest
-                        probability of ranking well and dominating your niche over time.
-                    </div>
-                </details>
-
-                <!-- FAQ 3 -->
-                <details
-                    class="group bg-slate-800/40 border border-slate-700/50 rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden hover:border-slate-600 transition-colors">
-                    <summary
-                        class="flex items-center justify-between cursor-pointer p-6 font-semibold text-slate-200 hover:text-white transition-colors outline-none selection:border-none">
-                        Do you offer White-Label SEO for Agencies?
-                        <i data-lucide="plus"
-                            class="w-5 h-5 text-slate-500 transition-transform duration-300 group-open:rotate-45"></i>
-                    </summary>
-                    <div
-                        class="px-6 pb-6 text-slate-400 text-sm leading-relaxed border-t border-slate-700/50 mt-2 pt-4">
-                        Yes! I regularly partner with marketing and web-design agencies to provide white-labeled SEO
-                        services for their clients. Everything from audits to reporting is fully branded under your
-                        agency's name.
-                    </div>
-                </details>
-
-                <!-- FAQ 4 -->
-                <details
-                    class="group bg-slate-800/40 border border-slate-700/50 rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden hover:border-slate-600 transition-colors">
-                    <summary
-                        class="flex items-center justify-between cursor-pointer p-6 font-semibold text-slate-200 hover:text-white transition-colors outline-none selection:border-none">
-                        Will I receive monthly reports on my campaign?
-                        <i data-lucide="plus"
-                            class="w-5 h-5 text-slate-500 transition-transform duration-300 group-open:rotate-45"></i>
-                    </summary>
-                    <div
-                        class="px-6 pb-6 text-slate-400 text-sm leading-relaxed border-t border-slate-700/50 mt-2 pt-4">
-                        Absolutely. Transparency is key. I provide comprehensive monthly reports detailing organic
-                        traffic growth, keyword ranking improvements, backlinks acquired, and a summary of tasks
-                        completed during the sprint.
-                    </div>
-                </details>
-
-                <!-- FAQ 5 -->
-                <details
-                    class="group bg-slate-800/40 border border-slate-700/50 rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden hover:border-slate-600 transition-colors">
-                    <summary
-                        class="flex items-center justify-between cursor-pointer p-6 font-semibold text-slate-200 hover:text-white transition-colors outline-none selection:border-none">
-                        Do you fix technical SEO issues or just content?
-                        <i data-lucide="plus"
-                            class="w-5 h-5 text-slate-500 transition-transform duration-300 group-open:rotate-45"></i>
-                    </summary>
-                    <div
-                        class="px-6 pb-6 text-slate-400 text-sm leading-relaxed border-t border-slate-700/50 mt-2 pt-4">
-                        I cover the full spectrum. Every successful SEO campaign begins with a deep technical audit. I
-                        will fix site architecture, speed issues (Core Web Vitals), schema markup, and crawlability
-                        before scaling content.
-                    </div>
-                </details>
-
-                <!-- FAQ 6 -->
-                <details
-                    class="group bg-slate-800/40 border border-slate-700/50 rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden hover:border-slate-600 transition-colors">
-                    <summary
-                        class="flex items-center justify-between cursor-pointer p-6 font-semibold text-slate-200 hover:text-white transition-colors outline-none selection:border-none">
-                        Can you audit my existing website first?
-                        <i data-lucide="plus"
-                            class="w-5 h-5 text-slate-500 transition-transform duration-300 group-open:rotate-45"></i>
-                    </summary>
-                    <div
-                        class="px-6 pb-6 text-slate-400 text-sm leading-relaxed border-t border-slate-700/50 mt-2 pt-4">
-                        Yes. A thorough audit is always step one. I evaluate your current on-page optimization, backlink
-                        profile, and technical health to identify exact bottlenecks holding your rankings back.
-                    </div>
-                </details>
+            <div id="faq-container" class="w-full lg:w-2/3 space-y-3">
+            </div>
 
             </div>
         </div>
     </section>
 
-    <!-- Ultimate Contact Section (Restored Vibrant Theme) -->
+    <!-- Ultimate Contact Section -->
     <section id="contact" class="relative py-20 md:py-24 overflow-hidden bg-slate-900 z-10">
-        <!-- Softened Bloom for Eye Comfort -->
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none z-0">
             <div class="absolute top-[20%] right-[15%] w-[30rem] h-[30rem] bg-blue-600/5 rounded-full blur-[100px]">
             </div>
@@ -1154,7 +1196,6 @@
                 class="bg-slate-800/40 backdrop-blur-xl border border-slate-700/50 rounded-[2rem] p-8 md:p-12 lg:p-16 shadow-xl shadow-black/20">
                 <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
 
-                    <!-- Left: Content & Branding -->
                     <div class="w-full lg:w-1/2 space-y-8">
                         <div
                             class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20">
@@ -1179,7 +1220,6 @@
                             growth roadmap today.
                         </p>
 
-                        <!-- Verified Contact Info -->
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
                             <a href="https://wa.me/923277007987"
                                 class="group/c flex items-center gap-4 bg-slate-900/50 border border-slate-700/30 p-4 rounded-xl hover:border-blue-500/50 transition-all duration-300">
@@ -1209,15 +1249,10 @@
                         </div>
                     </div>
 
-                    <!-- Right: Premium Form (Exact Mockup Replica) -->
                     <div class="w-full lg:w-1/2 relative z-30">
-                        <form action="https://formsubmit.co/rehmanjatt194@gmail.com" method="POST"
-                            class="space-y-4 bg-slate-900/40 p-6 md:p-8 rounded-2xl border border-slate-700/30">
-                            <!-- Hidden Configuration -->
-                            <input type="hidden" name="_next" value="https://rehmanjatt194.github.io/">
-                            <input type="hidden" name="_subject" value="New SEO Project Inquiry!">
+                        <form id="bottom-contact-form" class="space-y-4 bg-slate-900/40 p-6 md:p-8 rounded-2xl border border-slate-700/30">
+                            <input type="hidden" name="_subject" value="New SEO Project Inquiry! (Bottom Form)">
                             <input type="hidden" name="_template" value="table">
-                            <!-- Row 1: Name & Email -->
                             <div class="grid md:grid-cols-2 gap-4">
                                 <div class="space-y-1.5">
                                     <label
@@ -1235,7 +1270,6 @@
                                 </div>
                             </div>
 
-                            <!-- Row 2: Phone & Company URL -->
                             <div class="grid md:grid-cols-2 gap-4">
                                 <div class="space-y-1.5">
                                     <label
@@ -1253,7 +1287,6 @@
                                 </div>
                             </div>
 
-                            <!-- Row 3: Estimated Budget -->
                             <div class="space-y-1.5">
                                 <label
                                     class="text-[9px] font-black uppercase tracking-widest text-slate-500 ml-1">Estimated
@@ -1275,7 +1308,6 @@
                                 </div>
                             </div>
 
-                            <!-- Row 4: Project Details -->
                             <div class="space-y-1.5">
                                 <label
                                     class="text-[9px] font-black uppercase tracking-widest text-slate-500 ml-1">Project
@@ -1285,34 +1317,12 @@
                                     rows="3"
                                     class="w-full bg-slate-900/50 border border-slate-700/50 rounded-xl px-5 py-3 text-white placeholder:text-slate-600 focus:outline-none focus:border-blue-500/50 transition-all duration-300 outline-none resize-none text-sm"></textarea>
                             </div>
-
-                            <!-- Submit Button -->
-                            <button type="submit"
-                                class="w-full bg-white text-slate-900 py-4 rounded-xl font-black text-xs tracking-[0.2em] uppercase hover:bg-blue-500 hover:text-white transition-all duration-500 shadow-xl shadow-black/20 overflow-hidden relative group flex items-center justify-center gap-2">
-                                <span class="relative z-10 transition-colors duration-500">START PROJECT</span>
-                                <i data-lucide="arrow-right"
-                                    class="w-4 h-4 relative z-10 transition-transform duration-500 group-hover:translate-x-1"></i>
-                                <div
-                                    class="absolute inset-0 bg-blue-600 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                                </div>
+                            <button type="submit" id="bottom-submit-btn"
+                                class="w-full bg-blue-600 hover:bg-blue-500 text-white font-black py-4 rounded-xl transition-all duration-300 shadow-lg shadow-blue-600/20 uppercase tracking-[0.2em] text-xs flex items-center justify-center gap-3">
+                                Start Scaling Now <i data-lucide="arrow-right" class="w-4 h-4"></i>
                             </button>
                         </form>
-                        <!-- Success Message -->
-                        <div id="form-success"
-                            class="hidden space-y-4 bg-slate-900/30 p-10 rounded-2xl border border-blue-500/30 text-center animate-reveal-up">
-                            <div
-                                class="w-20 h-20 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto text-blue-400 mb-6 border border-blue-500/20">
-                                <i data-lucide="check-circle" class="w-10 h-10"></i>
-                            </div>
-                            <h3 class="text-3xl font-black text-white uppercase tracking-tighter">MESSAGE SENT!</h3>
-                            <p class="text-slate-400 font-medium">Thank you for reaching out. I'll review your project
-                                details and get back to you within 24 hours.</p>
-                            <button onclick="location.reload()"
-                                class="mt-8 text-xs font-black uppercase tracking-widest text-blue-400 hover:text-white transition-colors">Send
-                                another message</button>
-                        </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -1321,7 +1331,6 @@
     <footer class="bg-[#0f172a] pt-20 pb-10 border-t border-slate-800 relative z-0">
         <div class="max-w-7xl mx-auto px-4 md:px-12">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-                <!-- Brand & Bio -->
                 <div class="space-y-6 text-left">
                     <div class="flex items-center gap-4">
                         <div class="relative w-14 h-14 rounded-xl overflow-hidden border-2 border-primary/20">
@@ -1368,7 +1377,6 @@
                     </div>
                 </div>
 
-                <!-- Quick Links -->
                 <div class="text-left">
                     <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-widest">Quick Links</h4>
                     <ul class="space-y-4">
@@ -1390,7 +1398,6 @@
                     </ul>
                 </div>
 
-                <!-- Services -->
                 <div class="text-left">
                     <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-widest">Services</h4>
                     <ul class="space-y-4">
@@ -1412,7 +1419,6 @@
                     </ul>
                 </div>
 
-                <!-- Get In Touch -->
                 <div class="space-y-6 text-left">
                     <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-widest">Get In Touch</h4>
                     <div>
@@ -1450,10 +1456,8 @@
     </footer>
 
     <script>
-        // Lucide Icons
         lucide.createIcons();
 
-        // Scroll Reveal Animation
         const observerOptions = {
             threshold: 0.1
         };
@@ -1467,30 +1471,231 @@
         }, observerOptions);
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    </script>
-    <!-- Premium Contact Modal -->
-    <div id="contact-modal" class="fixed inset-0 z-[200] flex items-center justify-center p-4">
-        <!-- Backdrop -->
-        <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-md" onclick="closeModal()"></div>
+
+        const API_BASE_URL = 'http://localhost:5001/api/v1';
+
+        window.allBlogs = [];
+        window.openBlogModal = function(index) {
+            const blog = window.allBlogs[index];
+            const modal = document.getElementById('blog-modal');
+            if(!modal) return console.error('Modal not found');
+            document.getElementById('modal-blog-title').innerText = blog.title;
+            document.getElementById('modal-blog-date').innerText = new Date(blog.createdAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+            const modalImg = document.getElementById('modal-blog-image');
+            modalImg.src = blog.coverImage.startsWith('/uploads') ? 'http://localhost:5000' + blog.coverImage : blog.coverImage;
+            modalImg.alt = blog.imageAlt || blog.title;
+            document.getElementById('modal-blog-content').innerHTML = blog.content;
+            
+            modal.classList.add('active');
+            document.body.classList.add('modal-open');
+        }
+
+        window.closeBlogModal = function() {
+            const modal = document.getElementById('blog-modal');
+            modal.classList.remove('active');
+            document.body.classList.remove('modal-open');
+        }
+
+        function initReviewsSlider(count) {
+            console.log("Slider init for", count, "reviews");
+            // Placeholder slider logic if needed
+        }
+
+        async function fetchBlogs() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/content?category=Blog`);
+                const blogs = await response.json();
+                window.allBlogs = blogs;
+                const container = document.getElementById('blog-container');
+                
+                if (blogs.length === 0) {
+                    container.innerHTML = '<p class="text-slate-500">No blog posts found yet.</p>';
+                    return;
+                }
+
+                container.innerHTML = blogs.slice(0, 3).map((blog, index) => `
+                    <div class="stat-card group overflow-hidden flex flex-col">
+                        <div class="aspect-video relative overflow-hidden">
+                            <img src="${blog.coverImage.startsWith('/uploads') ? 'http://localhost:5000' + blog.coverImage : blog.coverImage}" 
+                                 alt="${blog.imageAlt || blog.title}" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="text-[10px] font-black text-blue-400 uppercase tracking-widest mb-3">${new Date(blog.createdAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</div>
+                            <h3 class="text-xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors line-clamp-2">${blog.title}</h3>
+                            <p class="text-slate-400 text-sm mb-6 line-clamp-3">${blog.content.replace(/<[^>]*>?/gm, '').substring(0, 120)}...</p>
+                            <a href="javascript:void(0)" onclick="openBlogModal(${index})" class="mt-auto text-xs font-black uppercase tracking-widest text-white flex items-center gap-2 group-hover:gap-3 transition-all">
+                                Read More <i data-lucide="arrow-right" class="w-3 h-3 text-blue-400"></i>
+                            </a>
+                        </div>
+                    </div>
+                `).join('');
+                
+                lucide.createIcons();
+            } catch (err) {
+                console.error("Error fetching blogs:", err);
+                document.getElementById('blog-container').innerHTML = '<p class="text-red-500/50 text-sm">Failed to load blogs. Connection error.</p>';
+            }
+        }
         
-        <!-- Modal Container -->
+        fetchBlogs();
+
+        async function fetchProjects() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/projects`);
+                const projects = await response.json();
+                const container = document.getElementById('projects-container');
+                
+                if (projects.length === 0) {
+                    container.innerHTML = '<p class="text-slate-500">No case studies found yet.</p>';
+                    return;
+                }
+
+                container.innerHTML = projects.map(project => `
+                    <div class="stat-card flex flex-col md:flex-row overflow-hidden group">
+                        <div class="w-full md:w-2/5 relative min-h-[250px] md:min-h-full">
+                            <img src="${project.imageUrl.startsWith('/uploads') ? 'http://localhost:5000' + project.imageUrl : project.imageUrl}" 
+                                 alt="${project.title}" 
+                                 class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-slate-900/50 group-hover:bg-slate-900/40 transition-colors"></div>
+                            <div class="absolute inset-0 flex items-center justify-center p-6 text-center">
+                                <span class="text-4xl font-black text-white tracking-tighter drop-shadow-xl text-center">
+                                    ${project.title}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="w-full md:w-3/5 p-8 md:p-10 flex flex-col justify-center relative">
+                            <div class="absolute top-8 right-8 w-11 h-11 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all shadow-sm">
+                                <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-4 pr-16 leading-snug">${project.title} Success: ${project.description}</h3>
+                            <p class="text-slate-400 leading-relaxed text-sm space-y-1 block mt-2">
+                                <span class="block"><strong class="text-white border-l-2 border-primary pl-2 mr-1">Situation:</strong> ${project.situation || 'N/A'}</span>
+                                <span class="block"><strong class="text-white border-l-2 border-primary pl-2 mr-1">Task:</strong> ${project.task || 'N/A'}</span>
+                                <span class="block"><strong class="text-white border-l-2 border-primary pl-2 mr-1">Action:</strong> ${project.action || 'N/A'}</span>
+                                <span class="block"><strong class="text-white border-l-2 border-primary pl-2 mr-1">Result:</strong> ${project.result || 'N/A'}</span>
+                            </p>
+                            <div class="mt-6 flex flex-wrap gap-2">
+                                ${project.techStack ? project.techStack.map(tech => `<span class="text-[10px] bg-slate-800 text-slate-400 px-3 py-1 rounded-full border border-slate-700">${tech}</span>`).join('') : ''}
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+                
+                lucide.createIcons();
+            } catch (err) {
+                console.error("Error fetching projects:", err);
+            }
+        }
+        
+        fetchProjects();
+
+        async function fetchFAQs() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/content?category=FAQ`);
+                const faqs = await response.json();
+                const container = document.getElementById('faq-container');
+                
+                if (faqs.length === 0) {
+                    container.innerHTML = '<p class="text-slate-500">No FAQs available.</p>';
+                    return;
+                }
+
+                container.innerHTML = faqs.map(faq => `
+                    <details class="group bg-slate-800/40 border border-slate-700/50 rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden hover:border-slate-600 transition-colors">
+                        <summary class="flex items-center justify-between cursor-pointer p-6 font-semibold text-slate-200 hover:text-white transition-colors outline-none">
+                            ${faq.title}
+                            <i data-lucide="plus" class="w-5 h-5 text-slate-500 transition-transform duration-300 group-open:rotate-45"></i>
+                        </summary>
+                        <div class="px-6 pb-6 text-slate-400 text-sm leading-relaxed border-t border-slate-700/50 mt-2 pt-4">
+                            ${faq.content}
+                        </div>
+                    </details>
+                `).join('');
+                
+                lucide.createIcons();
+            } catch (err) {
+                console.error("Error fetching FAQs:", err);
+            }
+        }
+        fetchFAQs();
+
+        async function fetchReviews() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/content?category=Review`);
+                const reviews = await response.json();
+                const container = document.getElementById('reviews-track');
+                
+                if (reviews.length === 0) {
+                    container.innerHTML = '<p class="text-slate-500">No reviews found.</p>';
+                    return;
+                }
+
+                container.innerHTML = reviews.map(rev => `
+                    <div class="w-full md:w-[calc(33.333%-16px)] flex-shrink-0">
+                        <div class="stat-card p-10 md:p-11 flex flex-col h-full relative group min-h-[380px]">
+                            <i data-lucide="quote" class="absolute top-10 right-10 w-16 h-16 text-slate-700/30 group-hover:text-blue-500/20 transition-all duration-500 pointer-events-none"></i>
+                            <div class="flex gap-1 mb-8">
+                                ${[1, 2, 3, 4, 5].map(() => `<i data-lucide="star" class="w-6 h-6 text-amber-400 fill-amber-400"></i>`).join('')}
+                            </div>
+                            <p class="text-slate-200 leading-relaxed mb-10 flex-grow relative z-10 text-base md:text-lg font-medium">
+                                "${rev.content.replace(/<[^>]*>?/gm, '')}"
+                            </p>
+                            <div class="flex items-center gap-5 mt-auto border-t border-slate-700/50 pt-8">
+                                <img src="${rev.coverImage.startsWith('/uploads') ? 'http://localhost:5000' + rev.coverImage : rev.coverImage}" 
+                                     alt="${rev.title}" 
+                                     class="w-14 h-14 rounded-full border-2 border-slate-700 group-hover:border-blue-500/50 transition-colors object-cover">
+                                <div>
+                                    <div class="text-white font-black text-base md:text-lg">${rev.title}</div>
+                                    <div class="text-xs md:text-sm text-slate-500 font-bold uppercase tracking-wider">${rev.subtitle || 'Client'}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+                
+                lucide.createIcons();
+                initReviewsSlider(reviews.length);
+            } catch (err) {
+                console.error("Error fetching reviews:", err);
+            }
+        }
+        fetchReviews();
+
+        window.openBlogModal = function(index) {
+            const blog = window.allBlogs[index];
+            const modal = document.getElementById('blog-modal');
+            document.getElementById('modal-blog-title').innerText = blog.title;
+            document.getElementById('modal-blog-date').innerText = new Date(blog.createdAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+            const modalImg = document.getElementById('modal-blog-image');
+            modalImg.src = blog.coverImage.startsWith('/uploads') ? 'http://localhost:5000' + blog.coverImage : blog.coverImage;
+            modalImg.alt = blog.imageAlt || blog.title;
+            document.getElementById('modal-blog-content').innerHTML = blog.content;
+            
+            modal.classList.add('active');
+            document.body.classList.add('modal-open');
+        }
+
+        function closeBlogModal() {
+            const modal = document.getElementById('blog-modal');
+            modal.classList.remove('active');
+            document.body.classList.remove('modal-open');
+        }
+    </script>
+    <div id="contact-modal" class="fixed inset-0 z-[200] flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-md" onclick="closeModal()"></div>
         <div class="modal-content relative w-full max-w-2xl bg-slate-900 border border-slate-700/50 rounded-3xl shadow-2xl overflow-hidden">
             <div class="p-8 md:p-10">
-                <!-- Close Button -->
                 <button onclick="closeModal()" class="absolute top-6 right-6 text-slate-500 hover:text-white transition-colors">
                     <i data-lucide="x" class="w-6 h-6"></i>
                 </button>
-
-                <!-- Header -->
                 <div class="mb-10 text-left">
                     <h3 class="text-3xl font-black text-white uppercase tracking-tighter mb-2">Start Your Technical Roadmap</h3>
                     <p class="text-slate-400 font-medium text-sm">Tell me about your project. I usually respond within 2 hours.</p>
                 </div>
-
                 <form id="modal-project-form" class="space-y-5 text-left">
                     <input type="hidden" name="_subject" value="New Modal Project Request!">
                     <input type="hidden" name="_template" value="table">
-                    
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                         <div class="space-y-2">
                             <label class="text-[9px] font-black uppercase tracking-widest text-slate-500 ml-1">Full Name *</label>
@@ -1501,7 +1706,6 @@
                             <input type="email" name="email" placeholder="john@company.com" required class="w-full bg-slate-950/50 border border-slate-800 rounded-xl px-5 py-3.5 text-white placeholder:text-slate-700 focus:outline-none focus:border-blue-500/50 transition-all text-sm">
                         </div>
                     </div>
-
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                         <div class="space-y-2">
                             <label class="text-[9px] font-black uppercase tracking-widest text-slate-500 ml-1">Phone *</label>
@@ -1512,7 +1716,6 @@
                             <input type="text" name="title" placeholder="Founder / CTO" class="w-full bg-slate-950/50 border border-slate-800 rounded-xl px-5 py-3.5 text-white placeholder:text-slate-700 focus:outline-none focus:border-blue-500/50 transition-all text-sm">
                         </div>
                     </div>
-
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                         <div class="space-y-2">
                             <label class="text-[9px] font-black uppercase tracking-widest text-slate-500 ml-1">Store URL</label>
@@ -1527,12 +1730,10 @@
                             </select>
                         </div>
                     </div>
-
                     <div class="space-y-2 text-left">
                         <label class="text-[9px] font-black uppercase tracking-widest text-slate-500 ml-1">Project Details *</label>
                         <textarea name="message" required placeholder="What are your current pain points? (e.g. slow load times, low conversion, need custom features)" rows="4" class="w-full bg-slate-950/50 border border-slate-800 rounded-xl px-5 py-3.5 text-white placeholder:text-slate-700 focus:outline-none focus:border-blue-500/50 transition-all resize-none text-sm"></textarea>
                     </div>
-
                     <button type="submit" class="w-full bg-white text-slate-900 py-4 rounded-xl font-black text-xs tracking-widest uppercase hover:bg-blue-600 hover:text-white transition-all duration-300 mt-4">
                         SEND REQUEST
                     </button>
@@ -1541,7 +1742,6 @@
         </div>
     </div>
 
-    <!-- Modal Scripts -->
     <script>
         const modal = document.getElementById('contact-modal');
         const form = document.getElementById('modal-project-form');
@@ -1556,7 +1756,6 @@
             document.body.classList.remove('modal-open');
         }
 
-        // AJAX Submission Handler
         if (form) {
             form.onsubmit = async (e) => {
                 e.preventDefault();
@@ -1567,14 +1766,19 @@
                 submitBtn.innerText = "SENDING...";
 
                 try {
-                    const response = await fetch("https://formsubmit.co/ajax/rehmanjatt194@gmail.com", {
+                    const formData = new FormData(form);
+                    const data = Object.fromEntries(formData.entries());
+
+                    const response = await fetch(`${API_BASE_URL}/messages`, {
                         method: "POST",
-                        body: new FormData(form),
-                        headers: { 'Accept': 'application/json' }
+                        body: JSON.stringify(data),
+                        headers: { 
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json' 
+                        }
                     });
 
-                    if (response.ok || window.location.protocol === 'file:') {
-                        // Show success even on local file (Simulated for testing)
+                    if (response.ok) {
                         form.innerHTML = `
                             <div class="py-20 text-center animate-reveal-up">
                                 <div class="w-20 h-20 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -1596,6 +1800,84 @@
                 }
             };
         }
+    </script>
+    <div id="blog-modal" class="fixed inset-0 z-[200] flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-slate-950/90 backdrop-blur-md" onclick="closeBlogModal()"></div>
+        <div class="relative w-full max-w-4xl max-h-[90vh] bg-slate-900 border border-slate-700/50 rounded-3xl shadow-2xl overflow-y-auto custom-scrollbar">
+            <div class="p-6 md:p-12">
+                <button onclick="closeBlogModal()" class="absolute top-6 right-6 text-slate-500 hover:text-white transition-colors">
+                    <i data-lucide="x" class="w-8 h-8"></i>
+                </button>
+                <div class="mb-8">
+                    <div id="modal-blog-date" class="text-xs font-black text-blue-400 uppercase tracking-[0.2em] mb-4"></div>
+                    <h2 id="modal-blog-title" class="text-3xl md:text-5xl font-black text-white leading-tight mb-8"></h2>
+                    <img id="modal-blog-image" src="" alt="" class="w-full h-auto aspect-video object-cover rounded-2xl border border-slate-800 shadow-2xl mb-12">
+                </div>
+                <div id="modal-blog-content" class="blog-content-full">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <style>
+        #blog-modal {
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+        #blog-modal.active {
+            visibility: visible;
+            opacity: 1;
+        }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
+    </style>
+
+    <script>
+        setTimeout(() => { if(typeof lucide !== 'undefined') lucide.createIcons();
+            const bottomForm = document.getElementById('bottom-contact-form');
+            if (bottomForm) {
+                bottomForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    const submitBtn = document.getElementById('bottom-submit-btn');
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = "Processing...";
+
+                    try {
+                        const formData = new FormData(bottomForm);
+                        const data = Object.fromEntries(formData.entries());
+
+                        const response = await fetch(`${API_BASE_URL}/messages`, {
+                            method: "POST",
+                            body: JSON.stringify(data),
+                            headers: { 
+                                'Content-Type': 'application/json',
+                                'Accept': 'application/json' 
+                            }
+                        });
+
+                        if (response.ok) {
+                            bottomForm.innerHTML = `
+                                <div class="py-12 text-center animate-reveal-up">
+                                    <div class="w-20 h-20 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-6 border border-blue-500/20">
+                                        <i data-lucide="check-circle" class="w-10 h-10 text-blue-500"></i>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-white mb-2">Message Received!</h3>
+                                    <p class="text-slate-400">I'll get back to you within 24 hours.</p>
+                                </div>`;
+                            lucide.createIcons();
+                        } else {
+                            throw new Error("Failed to send");
+                        }
+                    } catch (err) {
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = `Start Scaling Now <i data-lucide="arrow-right" class="w-4 h-4"></i>`;
+                        alert("Error sending message. Please try again.");
+                    }
+                });
+            }
+        });
     </script>
 </body>
 

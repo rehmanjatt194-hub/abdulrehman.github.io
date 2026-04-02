@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdul Rehman - Backend Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #0f172a; color: #f8fafc; font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+    <div id="app" class="w-full max-w-md p-8 bg-slate-900 border border-slate-800 rounded-3xl shadow-2xl">
+        <!-- Login Form -->
+        <div id="login-view">
+            <h1 class="text-3xl font-black uppercase tracking-tighter mb-6 text-white text-center">Backend Login</h1>
+            <p class="text-slate-400 text-sm mb-8 text-center">Log in with your name to access the dashboard.</p>
+            <div class="space-y-4">
+                <input type="email" id="email" placeholder="abdulrehman@gmail.com" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-all">
+                <input type="password" id="password" placeholder="Password (abdulrehman)" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-all">
+                <button onclick="login()" id="login-btn" class="w-full bg-white text-slate-900 py-3 rounded-xl font-bold uppercase tracking-widest hover:bg-blue-600 hover:text-white transition-all">Login</button>
+            </div>
+        </div>
+
+        <!-- Dashboard -->
+        <div id="dashboard-view" class="hidden">
+            <div class="flex justify-between items-center mb-6">
+                <h1 class="text-xl font-black uppercase tracking-tighter text-white">Task Dashboard</h1>
+                <button onclick="logout()" class="text-xs text-slate-500 hover:text-white transition-colors">Logout</button>
+            </div>
+            
+            <div id="task-list" class="space-y-3 mb-6">
+                <!-- Tasks will appear here -->
+            </div>
+
+            <div class="space-y-3 pt-6 border-t border-slate-800">
+                <input type="text" id="task-title" placeholder="New Task Title" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2 text-sm text-white focus:outline-none focus:border-blue-500 transition-all">
+                <button onclick="addTask()" class="w-full bg-blue-600 text-white py-2 rounded-xl text-xs font-bold uppercase tracking-widest hover:bg-blue-500 transition-all">+ Add Task</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let token = null;
+
+        async function login() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const btn = document.getElementById('login-btn');
+
+            btn.innerText = "Connecting...";
+            try {
+                const res = await fetch('/api/auth/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
+                const data = await res.json();
+                if (res.ok) {
+                    token = data.token;
+                    document.getElementById('login-view').classList.add('hidden');
+                    document.getElementById('dashboard-view').classList.remove('hidden');
+                    fetchTasks();
+                } else {
+                    alert(data.message);
+                }
+            } catch (err) {
+                alert("Server not running? Make sure to run 'npm start'");
+            }
+            btn.innerText = "Login";
+        }
+
+        async function fetchTasks() {
+            const res = await fetch('/api/tasks', {
+                headers: { 'Authorization': `Bearer ${token}` }
+            });
+            const tasks = await res.json();
+            const list = document.getElementById('task-list');
+            list.innerHTML = tasks.map(t => `
+                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 flex justify-between items-center">
+                    <span class="text-sm font-medium text-slate-300">${t.title}</span>
+                    <button onclick="deleteTask('${t._id}')" class="text-[10px] text-red-500 hover:text-red-400">Delete</button>
+                </div>
+            `).join('') || '<p class="text-center text-slate-600 text-xs py-4">No tasks found. Add one below!</p>';
+        }
+
+        async function addTask() {
+            const title = document.getElementById('task-title').value;
+            if (!title) return;
+
+            const res = await fetch('/api/tasks', {
+                method: 'POST',
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify({ title })
+            });
+            if (res.ok) {
+                document.getElementById('task-title').value = '';
+                fetchTasks();
+            }
+        }
+
+        async function deleteTask(id) {
+            await fetch(`/api/tasks/${id}`, {
+                method: 'DELETE',
+                headers: { 'Authorization': `Bearer ${token}` }
+            });
+            fetchTasks();
+        }
+
+        function logout() {
+            token = null;
+            document.getElementById('login-view').classList.remove('hidden');
+            document.getElementById('dashboard-view').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
