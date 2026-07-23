@@ -1289,6 +1289,9 @@ footer {
     .reviews-grid { grid-template-columns: 1fr; }
     .nav-items { display: none; }
     .case-study-card { grid-template-columns: 1fr; }
+    footer [style*="grid-template-columns:2fr 1fr 1fr 1fr"] {
+        grid-template-columns: 1fr 1fr !important;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1298,6 +1301,9 @@ footer {
     .section-padding { padding: 4rem 1.25rem; }
     .nav-bar { padding: 0.65rem 1.25rem; }
     .footer-bottom { flex-direction: column; }
+    footer [style*="grid-template-columns:2fr 1fr 1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+    }
 }
 
 @media (max-width: 480px) {
