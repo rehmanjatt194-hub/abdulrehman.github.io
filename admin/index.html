@@ -1,69 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | Admin Portal</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Admin Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
+<body class="dashboard-body">
 
-<body class="dashboard">
-    <aside class="sidebar">
-        <h2>Admin Panel</h2>
-        <nav>
-            <a href="#" id="nav-dashboard" class="nav-link active">🏠 Dashboard</a>
-            <a href="#" id="nav-projects" class="nav-link">📁 Projects</a>
-            <a href="#" id="nav-blogs" class="nav-link">✍️ Blogs & Cases</a>
-            <a href="#" id="nav-faqs" class="nav-link">❓ FAQs</a>
-            <a href="#" id="nav-reviews" class="nav-link">⭐ Reviews</a>
-            <a href="#" id="nav-messages" class="nav-link">📩 Messages</a>
-            <hr style="margin: 1.5rem 0; opacity: 0.1;">
-            <a href="#" id="nav-logout" class="nav-link" style="color: #f87171;">🚪 Logout</a>
-        </nav>
-    </aside>
+  <!-- ══════════════════════════════════════════
+       SIDEBAR
+  ══════════════════════════════════════════ -->
+  <aside class="sidebar" id="sidebar">
 
-    <main class="main-content">
-        <header style="margin-bottom: 2.5rem; display: flex; justify-content: space-between; align-items: center;">
-            <h1 id="sectionTitle">Dashboard Overview</h1>
-            <div id="userInfo"
-                style="background: var(--bg-card); padding: 0.5rem 1rem; border-radius: 2rem; border: 1px solid var(--border);">
-                Admin
+    <div class="sidebar-header">
+      <div class="sidebar-logo">⚡</div>
+      <div class="sidebar-brand">
+        <h2>AdminPanel</h2>
+        <span>Portfolio Manager</span>
+      </div>
+      <button class="sidebar-toggle" id="sidebarToggle" title="Collapse sidebar">⇤</button>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="nav-section-label">Main</div>
+      <a href="#" class="nav-link active" data-section="dashboard">
+        <span class="nav-icon">🏠</span>
+        <span class="nav-label">Dashboard</span>
+      </a>
+
+      <div class="nav-section-label">Content</div>
+      <a href="#" class="nav-link" data-section="projects">
+        <span class="nav-icon">📁</span>
+        <span class="nav-label">Projects</span>
+      </a>
+      <a href="#" class="nav-link" data-section="blogs">
+        <span class="nav-icon">✍️</span>
+        <span class="nav-label">Blogs & Cases</span>
+      </a>
+      <a href="#" class="nav-link" data-section="faqs">
+        <span class="nav-icon">❓</span>
+        <span class="nav-label">FAQs</span>
+      </a>
+      <a href="#" class="nav-link" data-section="reviews">
+        <span class="nav-icon">⭐</span>
+        <span class="nav-label">Reviews</span>
+      </a>
+
+      <div class="nav-section-label">Inbox</div>
+      <a href="#" class="nav-link" data-section="messages">
+        <span class="nav-icon">📩</span>
+        <span class="nav-label">Messages</span>
+        <span class="nav-badge" id="msgBadge" style="display:none">0</span>
+      </a>
+
+      <div class="nav-divider"></div>
+      <a href="#" class="nav-link danger" id="nav-logout">
+        <span class="nav-icon">🚪</span>
+        <span class="nav-label">Logout</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="user-card">
+        <div class="user-avatar" id="userAvatar">A</div>
+        <div class="user-info">
+          <div class="user-name" id="userNameDisplay">Admin</div>
+          <div class="user-role">Administrator</div>
+        </div>
+        <div class="user-status" title="Online"></div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ══════════════════════════════════════════
+       MAIN CONTENT
+  ══════════════════════════════════════════ -->
+  <main class="main-content" id="mainContent">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <h1 id="sectionTitle">Dashboard Overview</h1>
+        <p id="sectionSubtitle">Welcome back! Here's what's happening.</p>
+      </div>
+      <div class="topbar-right">
+        <div class="topbar-clock" id="liveClock">🕐 --:--:--</div>
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          API Live
+        </div>
+      </div>
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-content" id="pageContent">
+
+      <!-- DASHBOARD HOME -->
+      <section id="dashboardSection">
+
+        <!-- Stat Cards -->
+        <div class="stats-grid" id="statsGrid">
+          <div class="stat-card indigo">
+            <div class="stat-icon-wrap">📁</div>
+            <div class="stat-label">Total Projects</div>
+            <div class="stat-value" id="countProjects">—</div>
+            <div class="stat-trend text-muted text-small">Case studies published</div>
+          </div>
+          <div class="stat-card cyan">
+            <div class="stat-icon-wrap">✍️</div>
+            <div class="stat-label">Blog Posts</div>
+            <div class="stat-value" id="countBlogs">—</div>
+            <div class="stat-trend text-muted text-small">Articles & case studies</div>
+          </div>
+          <div class="stat-card green">
+            <div class="stat-icon-wrap">⭐</div>
+            <div class="stat-label">Reviews</div>
+            <div class="stat-value" id="countReviews">—</div>
+            <div class="stat-trend text-muted text-small">Client testimonials</div>
+          </div>
+          <div class="stat-card amber">
+            <div class="stat-icon-wrap">❓</div>
+            <div class="stat-label">FAQs</div>
+            <div class="stat-value" id="countFaqs">—</div>
+            <div class="stat-trend text-muted text-small">Answered questions</div>
+          </div>
+          <div class="stat-card red">
+            <div class="stat-icon-wrap">📩</div>
+            <div class="stat-label">New Messages</div>
+            <div class="stat-value" id="countMessages">—</div>
+            <div class="stat-trend text-muted text-small">Unread inquiries</div>
+          </div>
+        </div>
+
+        <!-- System Status -->
+        <div class="card" style="animation-delay:0.4s">
+          <div class="card-header">
+            <h3 class="card-title">⚙️ System Status</h3>
+          </div>
+          <div class="system-card">
+            <div class="system-item">
+              <div class="system-item-label">Backend URL</div>
+              <div class="system-item-value" style="color:var(--primary-light); font-size:0.82rem;">http://localhost:5001</div>
             </div>
-        </header>
-
-        <!-- Dashboard Home Section -->
-        <section id="dashboardSection">
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-label">Total Projects</div>
-                    <div class="stat-value" id="countProjects">0</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-label">Total Blogs</div>
-                    <div class="stat-value" id="countBlogs">0</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-label">New Messages</div>
-                    <div class="stat-value" id="countMessages">0</div>
-                </div>
+            <div class="system-item">
+              <div class="system-item-label">API Version</div>
+              <div class="system-item-value">v1</div>
             </div>
-
-            <div class="card">
-                <h3>System Status</h3>
-                <p style="margin-top: 1rem; color: var(--text-muted);">Connected to Local Backend:
-                    <strong>http://localhost:5000</strong></p>
+            <div class="system-item">
+              <div class="system-item-label">Database</div>
+              <div class="system-item-value" style="color:var(--green);">● In-Memory / MongoDB</div>
             </div>
-        </section>
+            <div class="system-item">
+              <div class="system-item-label">Status</div>
+              <div class="system-item-value" style="color:var(--green);">● All Systems Go</div>
+            </div>
+          </div>
+        </div>
 
-        <!-- Dynamic Sections will be injected here via admin.js -->
-        <div id="dynamicContent"></div>
-    </main>
+      </section>
 
-    <script src="admin.js"></script>
+      <!-- DYNAMIC SECTIONS injected by admin.js -->
+      <div id="dynamicContent"></div>
+    </div>
+  </main>
+
+  <!-- ══════════════════════════════════════════
+       CRUD MODAL
+  ══════════════════════════════════════════ -->
+  <div class="modal-overlay" id="crudModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modalTitle">Add Item</h2>
+        <button class="modal-close" id="modalClose">✕</button>
+      </div>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       MESSAGE READER MODAL
+  ══════════════════════════════════════════ -->
+  <div class="msg-modal-overlay" id="msgModal">
+    <div class="msg-modal-box">
+      <div class="modal-header">
+        <h2 class="modal-title">Message from <span id="msgModalName" style="color:var(--primary-light)"></span></h2>
+        <button class="modal-close" onclick="closeMsgModal()">✕</button>
+      </div>
+      <div id="msgModalText" style="color:var(--text-soft); line-height:1.8; white-space:pre-wrap; font-size:0.93rem; max-height:55vh; overflow-y:auto; padding-right:0.25rem;"></div>
+      <div style="margin-top:1.5rem; text-align:right;">
+        <button class="btn btn-primary btn-sm" onclick="closeMsgModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       TOAST CONTAINER
+  ══════════════════════════════════════════ -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+  <script src="admin.js"></script>
 </body>
-
 </html>

@@ -26,7 +26,7 @@ app.use(helmet({
             ...helmet.contentSecurityPolicy.getDefaultDirectives(),
             "script-src": ["'self'", "'unsafe-inline'", "https://cdn.tailwindcss.com", "https://unpkg.com", "https://cdn.quilljs.com", "https://cdn.jsdelivr.net"],
             "script-src-attr": ["'self'", "'unsafe-inline'"],
-            "img-src": ["'self'", "data:", "https://images.unsplash.com", "http://localhost:5000"],
+            "img-src": ["'self'", "data:", "https://images.unsplash.com", "http://localhost:5000", "http://localhost:5001"],
             "style-src": ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com", "https://cdn.quilljs.com", "https://cdn.jsdelivr.net"],
             "font-src": ["'self'", "https://fonts.gstatic.com"]
         },

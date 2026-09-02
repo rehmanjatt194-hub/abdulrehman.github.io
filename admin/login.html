@@ -1,29 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login | Portfolio Manager</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login | Portfolio Manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body class="login-page">
-    <div class="login-container">
-        <h1>Admin Portal</h1>
-        <p>Login to manage your business portfolio.</p>
-        <form id="loginForm">
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" placeholder="admin@example.com" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" placeholder="••••••••" required>
-            </div>
-            <button type="submit" class="btn-primary">Sign In</button>
-            <div id="message"></div>
-        </form>
+
+  <!-- Background Decorations -->
+  <div class="login-bg-grid"></div>
+  <div class="login-orb login-orb-1"></div>
+  <div class="login-orb login-orb-2"></div>
+
+  <!-- Login Card -->
+  <div class="login-card">
+
+    <div class="login-brand">
+      <div class="login-logo">⚡</div>
+      <h1>Admin Portal</h1>
+      <p>Manage your portfolio like a pro</p>
     </div>
-    <script src="admin.js"></script>
+
+    <div class="login-divider"></div>
+
+    <form id="loginForm" autocomplete="off">
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <div class="input-wrapper">
+          <span class="input-icon">✉</span>
+          <input type="email" id="email" placeholder="admin@example.com" required autocomplete="email">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <div class="input-wrapper">
+          <span class="input-icon">🔒</span>
+          <input type="password" id="password" placeholder="••••••••••" required autocomplete="current-password">
+        </div>
+      </div>
+
+      <button type="submit" class="btn-login" id="loginBtn">
+        <span id="loginBtnText">Sign In to Dashboard</span>
+      </button>
+
+      <div id="loginMessage"></div>
+    </form>
+
+    <div style="margin-top:2rem; text-align:center;">
+      <a href="../index.html" style="font-size:0.8rem; color:var(--text-muted); text-decoration:none; transition:color 0.2s;"
+         onmouseover="this.style.color='var(--primary-light)'" onmouseout="this.style.color='var(--text-muted)'">
+        ← Back to Portfolio
+      </a>
+    </div>
+  </div>
+
+  <script>
+    const API_URL = 'http://localhost:5001/api/v1';
+
+    document.getElementById('loginForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email    = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+      const btn      = document.getElementById('loginBtn');
+      const msgDiv   = document.getElementById('loginMessage');
+      const btnText  = document.getElementById('loginBtnText');
+
+      btn.disabled = true;
+      btnText.textContent = 'Signing in…';
+      msgDiv.innerHTML = '';
+
+      try {
+        const res  = await fetch(`${API_URL}/users/login`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        });
+        const data = await res.json();
+
+        if (res.ok) {
+          localStorage.setItem('adminToken', data.token);
+          localStorage.setItem('adminUser', data.username || data.user?.username || 'Admin');
+          btnText.textContent = '✓ Redirecting…';
+          setTimeout(() => { window.location.href = 'index.html'; }, 500);
+        } else {
+          msgDiv.innerHTML = `<span class="msg-error">⚠ ${data.message || 'Invalid credentials'}</span>`;
+          btn.disabled = false;
+          btnText.textContent = 'Sign In to Dashboard';
+        }
+      } catch (err) {
+        msgDiv.innerHTML = `<span class="msg-error">⚠ Cannot reach server. Is the backend running?</span>`;
+        btn.disabled = false;
+        btnText.textContent = 'Sign In to Dashboard';
+      }
+    });
+  </script>
 </body>
 </html>
